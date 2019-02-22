@@ -1,3 +1,7 @@
-<h2>{{movie.name}} Details</h2>
+<h2>{{movie.name | uppercase}} Details</h2>
 <div><span>id: </span>{{movie.id}}</div>
-<div><span>name: </span>{{movie.name}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="movie.name" placeholder="name">
+  </label>
+</div>
