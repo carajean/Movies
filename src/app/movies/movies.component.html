@@ -6,15 +6,4 @@
     <span class="badge">{{movie.id}}</span> {{movie.name}}
   </li>
 </ul>
- 
-<div *ngIf="selectedMovie">
- 
-  <h2>{{selectedMovie.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedMovie.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedMovie.name" placeholder="name">
-    </label>
-  </div>
- 
-</div>
+<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
