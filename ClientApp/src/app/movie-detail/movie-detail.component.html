@@ -1,0 +1,12 @@
+<div *ngIf="movie">
+
+  <h2>Details</h2>
+  <div>
+    <label>Title:
+      <input [(ngModel)]="movie.name" placeholder="name"/>
+    </label>
+  </div>
+  <div><span>Release Year: </span>{{movie.year}}</div>
+
+
+</div>
