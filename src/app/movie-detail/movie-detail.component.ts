@@ -28,6 +28,10 @@ export class MovieDetailComponent implements OnInit {
     this.movieService.getMovie(id).subscribe(movie => (this.movie = movie));
   }
 
+  save(): void {
+    this.movieService.updateMovie(this.movie).subscribe(() => this.goBack());
+  }
+
   goBack(): void {
     this.location.back();
   }
