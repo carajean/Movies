@@ -1,11 +1,8 @@
-<h2>My Movies</h2>
-
+<h2>Movie Menu</h2>
 <ul class="movies">
-  <li *ngFor="let movie of movies"
-    [class.selected]="movie === selectedMovie"
-    (click)="onSelect(movie)">
-    <span class="badge">{{movie.id}}</span> {{movie.name}}
+  <li *ngFor="let movie of movies">
+    <a routerLink="/detail/{{movie.id}}">
+      <span class="badge">{{movie.id}}</span> {{movie.name}}
+    </a>
   </li>
 </ul>
-
-<app-movie-detail [movie]="selectedMovie"></app-movie-detail>
