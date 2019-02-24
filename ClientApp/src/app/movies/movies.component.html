@@ -1,4 +1,13 @@
 <h2>Movie Menu</h2>
+  <div>
+    <label>Movie:
+      <input #movieName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(movieName.value); movieName.value=''">
+      add
+    </button>
+  </div>
 <ul class="movies">
   <li *ngFor="let movie of movies">
     <a routerLink="/detail/{{movie.id}}">

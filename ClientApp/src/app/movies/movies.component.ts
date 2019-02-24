@@ -20,4 +20,19 @@ export class MoviesComponent implements OnInit {
   getMovies(): void {
     this.movieService.getMovies().subscribe(movies => (this.movies = movies));
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.movieService.addMovie({ name } as Movie).subscribe(movie => {
+      this.movies.push(movie);
+    });
+  }
+
+  delete(movie: Movie): void {
+    this.movies = this.movies.filter(h => h !== movie);
+    this.movieService.deleteMovie(movie).subscribe();
+  }
 }
