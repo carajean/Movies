@@ -8,18 +8,22 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const movies = [
-      { id: 1, name: 'Mr. Nice', year: 2019, category: '', rating: null },
-      { id: 2, name: 'Narco', year: 2019, category: '', rating: null },
-      { id: 3, name: 'Bombasto', year: 2019, category: '', rating: null },
+      { id: 1, name: 'Mr. Nice', year: 2019, category: 'Drama', rating: null },
+      { id: 2, name: 'Narco', year: 2019, category: 'Drama', rating: null },
+      { id: 3, name: 'Bombasto', year: 2019, category: 'Drama', rating: null },
       { id: 4, name: 'Celeritas', year: 2019, category: '', rating: null },
       { id: 5, name: 'Magneta', year: 2019, category: '', rating: null },
       { id: 6, name: 'RubberMan', year: 2019, category: '', rating: null },
       { id: 7, name: 'Dynama', year: 2019, category: '', rating: null },
-      { id: 8, name: 'Dr IQ', year: 2019, category: '', rating: null },
+      { id: 8, name: 'Dr IQ', year: 2019, category: 'Comedy', rating: null },
       { id: 9, name: 'Magma', year: 2019, category: '', rating: null },
-      { id: 10, name: 'Tornado', year: 2019, category: '', rating: null }
+      { id: 10, name: 'Tornado', year: 2019, category: 'Comedy', rating: null }
     ];
-    const lists = ['Drama', 'Sci-Fi', 'Comedy', 'Documentary'];
+    const lists = [
+      { id: 0, name: 'Drama' },
+      { id: 1, name: 'Sci-Fi' },
+      { id: 2, name: 'Comedy' }
+    ];
     return { movies, lists };
   }
 

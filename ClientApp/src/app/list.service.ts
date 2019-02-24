@@ -22,21 +22,21 @@ export class ListService {
       .pipe(catchError(this.handleError('getLists', [])));
   }
 
-  /** GET list by id. Return `undefined` when id not found */
-  getListNo404<Data>(id: number): Observable<List> {
-    const url = `${this.listsUrl}/?id=${id}`;
+  /** GET list by name. Return `undefined` when name not found */
+  getListNo404<Data>(name: string): Observable<List> {
+    const url = `${this.listsUrl}/?name=${name}`;
     return this.http.get<List[]>(url).pipe(
       map(lists => lists[0]), // returns a {0|1} element array
-      catchError(this.handleError<List>(`getList id=${id}`))
+      catchError(this.handleError<List>(`getList name=${name}`))
     );
   }
 
-  /** GET list by id. Will 404 if id not found */
-  getList(id: number): Observable<List> {
-    const url = `${this.listsUrl}/${id}`;
+  /** GET list by name. Will 404 if name not found */
+  getList(name: number): Observable<List> {
+    const url = `${this.listsUrl}/${name}`;
     return this.http
       .get<List>(url)
-      .pipe(catchError(this.handleError<List>(`getList id=${id}`)));
+      .pipe(catchError(this.handleError<List>(`getList name=${name}`)));
   }
 
   /* GET lists whose name contains search term */

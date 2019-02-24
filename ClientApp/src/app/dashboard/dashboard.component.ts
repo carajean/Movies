@@ -8,6 +8,11 @@ import { ListService } from '../list.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  // lists: [
+  //   { id: 0; name: 'Drama' },
+  //   { id: 1; name: 'Sci-Fi' },
+  //   { id: 2; name: 'Comedy' }
+  // ];
   lists: List[];
 
   constructor(private listService: ListService) {}

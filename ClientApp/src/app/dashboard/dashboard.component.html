@@ -1,6 +1,6 @@
 <h3>Movie Menu</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let list of lists" class="col-1-4" routerLink="/lists/{{list.id}}">
+  <a *ngFor="let list of lists" class="col-1-4" routerLink="lists/{{list.name}}">
     <div class="module list">
       <h4>{{list.name}}</h4>
     </div>

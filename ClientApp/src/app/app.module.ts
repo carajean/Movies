@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
@@ -16,13 +15,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { ListService } from './list.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     FetchDataComponent,
     MoviesComponent,
     MovieDetailComponent,
@@ -35,7 +34,6 @@ import { InMemoryDataService } from './in-memory-data.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent }
     ]),
     AppRoutingModule,
@@ -46,7 +44,7 @@ import { InMemoryDataService } from './in-memory-data.service';
       dataEncapsulation: false
     })
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

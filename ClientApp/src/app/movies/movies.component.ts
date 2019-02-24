@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
 import { List } from '../list';
-import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-movies',
@@ -12,12 +12,16 @@ import { ListService } from '../list.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[];
-  list: string;
+  list: List;
+  name: String;
 
   constructor(
     private movieService: MovieService,
-    private listService: ListService
-  ) {}
+    private route: ActivatedRoute
+  ) {
+    this.list;
+    this.name = this.route.snapshot.params['name'];
+  }
 
   ngOnInit() {
     this.getMovies();
@@ -27,7 +31,10 @@ export class MoviesComponent implements OnInit {
     this.movieService
       .getMovies()
       .subscribe(
-        movies => (this.movies = movies.filter(movie => movie.category === ''))
+        movies =>
+          (this.movies = movies.filter(
+            movie => movie.category === this.route.snapshot.params['name']
+          ))
       );
   }
 
