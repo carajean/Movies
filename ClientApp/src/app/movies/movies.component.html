@@ -1,11 +1,11 @@
 <h3>{{this.name}}</h3>
 <div>
-  <label>Movie:
-    <input #movieName />
+  <label>
+    <input #movieName placeholder="Add Movie"/>
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(movieName.value); movieName.value=''">
-    add
+    Submit
   </button>
 </div>
 <ul class="movies">
