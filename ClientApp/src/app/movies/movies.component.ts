@@ -45,9 +45,11 @@ export class MoviesComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.movieService.addMovie({ name } as Movie).subscribe(movie => {
-      this.movies.push(movie);
-    });
+    this.movieService
+      .addMovie({ name, category: this.name } as Movie)
+      .subscribe(movie => {
+        this.movies.push(movie);
+      });
   }
 
   delete(movie: Movie): void {
