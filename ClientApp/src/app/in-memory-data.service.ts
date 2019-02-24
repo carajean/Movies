@@ -8,18 +8,19 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const movies = [
-      { id: 11, name: 'Mr. Nice', year: 2019 },
-      { id: 12, name: 'Narco', year: 2019 },
-      { id: 13, name: 'Bombasto', year: 2019 },
-      { id: 14, name: 'Celeritas', year: 2019 },
-      { id: 15, name: 'Magneta', year: 2019 },
-      { id: 16, name: 'RubberMan', year: 2019 },
-      { id: 17, name: 'Dynama', year: 2019 },
-      { id: 18, name: 'Dr IQ', year: 2019 },
-      { id: 19, name: 'Magma', year: 2019 },
-      { id: 20, name: 'Tornado', year: 2019 }
+      { id: 1, name: 'Mr. Nice', year: 2019, category: '', rating: null },
+      { id: 2, name: 'Narco', year: 2019, category: '', rating: null },
+      { id: 3, name: 'Bombasto', year: 2019, category: '', rating: null },
+      { id: 4, name: 'Celeritas', year: 2019, category: '', rating: null },
+      { id: 5, name: 'Magneta', year: 2019, category: '', rating: null },
+      { id: 6, name: 'RubberMan', year: 2019, category: '', rating: null },
+      { id: 7, name: 'Dynama', year: 2019, category: '', rating: null },
+      { id: 8, name: 'Dr IQ', year: 2019, category: '', rating: null },
+      { id: 9, name: 'Magma', year: 2019, category: '', rating: null },
+      { id: 10, name: 'Tornado', year: 2019, category: '', rating: null }
     ];
-    return { movies };
+    const lists = ['Drama', 'Sci-Fi', 'Comedy', 'Documentary'];
+    return { movies, lists };
   }
 
   // Overrides the genId method to ensure that a movie always has an id.
@@ -30,6 +31,6 @@ export class InMemoryDataService implements InMemoryDbService {
   genId(movies: Movie[]): number {
     return movies.length > 0
       ? Math.max(...movies.map(movie => movie.id)) + 1
-      : 11;
+      : 1;
   }
 }

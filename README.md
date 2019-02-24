@@ -4,7 +4,7 @@
 
 ## Features
 
-- [ ] view all lists
+- [x] view all lists
 - [ ] create & name an unlimited number of lists
 - [ ] click on list --> view all movies in that list
 - [ ] add new movies to a list

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../movie';
-import { MovieService } from '../movie.service';
+import { List } from '../list';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +8,15 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  movies: Movie[];
+  lists: List[];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private listService: ListService) {}
 
   ngOnInit() {
-    this.getMovies();
+    this.getLists();
   }
 
-  getMovies(): void {
-    this.movieService.getMovies().subscribe(movies => (this.movies = movies));
+  getLists(): void {
+    this.listService.getLists().subscribe(lists => (this.lists = lists));
   }
 }

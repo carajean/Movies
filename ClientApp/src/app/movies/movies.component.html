@@ -1,17 +1,19 @@
-<h2>Movie Menu</h2>
-  <div>
-    <label>Movie:
-      <input #movieName />
-    </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add(movieName.value); movieName.value=''">
-      add
-    </button>
-  </div>
+<h3>List</h3>
+<div>
+  <label>Movie:
+    <input #movieName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(movieName.value); movieName.value=''">
+    add
+  </button>
+</div>
 <ul class="movies">
   <li *ngFor="let movie of movies">
     <a routerLink="/detail/{{movie.id}}">
-      <span class="badge">{{movie.id}}</span> {{movie.name}}
+      <span class="badge">{{movie.year}}</span> {{movie.name}}
     </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
   </li>
 </ul>

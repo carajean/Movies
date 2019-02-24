@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { Movie } from './movie';
 
@@ -28,9 +27,6 @@ export class MovieService {
     const url = `${this.moviesUrl}/?id=${id}`;
     return this.http.get<Movie[]>(url).pipe(
       map(movies => movies[0]), // returns a {0|1} element array
-      tap(h => {
-        const outcome = h ? `fetched` : `did not find`;
-      }),
       catchError(this.handleError<Movie>(`getMovie id=${id}`))
     );
   }

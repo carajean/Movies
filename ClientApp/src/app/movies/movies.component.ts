@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
+import { List } from '../list';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-movies',
@@ -10,15 +12,23 @@ import { MovieService } from '../movie.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[];
+  list: string;
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private listService: ListService
+  ) {}
 
   ngOnInit() {
     this.getMovies();
   }
 
   getMovies(): void {
-    this.movieService.getMovies().subscribe(movies => (this.movies = movies));
+    this.movieService
+      .getMovies()
+      .subscribe(
+        movies => (this.movies = movies.filter(movie => movie.category === ''))
+      );
   }
 
   add(name: string): void {
