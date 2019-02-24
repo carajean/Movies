@@ -20,13 +20,14 @@ export class MovieSearchComponent implements OnInit {
 
   // Push a search term into the observable stream.
   search(term: string): void {
-    this.searchTerms.next(term);
+    if (term.length < 3) this.searchTerms.next('');
+    if (term.length >= 3) this.searchTerms.next(term);
   }
 
   ngOnInit(): void {
     this.movies$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
+      debounceTime(200),
 
       // ignore new term if same as previous term
       distinctUntilChanged(),

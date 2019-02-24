@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
@@ -17,7 +18,8 @@ export class MoviesComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     this.list;
     this.name = this.route.snapshot.params['name'];
@@ -51,5 +53,9 @@ export class MoviesComponent implements OnInit {
   delete(movie: Movie): void {
     this.movies = this.movies.filter(h => h !== movie);
     this.movieService.deleteMovie(movie).subscribe();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

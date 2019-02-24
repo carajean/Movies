@@ -5,12 +5,12 @@
 ## Features
 
 - [x] view all lists
-- [ ] create & name an unlimited number of lists
-- [ ] click on list --> view all movies in that list
-- [ ] add new movies to a list
+- [x] create & name an unlimited number of lists
+- [x] click on list --> view all movies in that list
+- [x] add new movies to a list
 - [ ] when adding a movie, auto-populate with movie names from an online movie names API; begin auto-populating selectable choices after three letters are typed
 - [ ] ability to edit movies
-- [ ] ability to delete movies
+- [x] ability to delete movies
 - [ ] ability to rate movies / mark as watched
 - [ ] lists should get saved to a database and loaded and retrieved from that database each time the web application is visited
 - [ ] **Bonus Points!** click on a movie name --> open a trailer for the movie online || view a rating page for the movie online

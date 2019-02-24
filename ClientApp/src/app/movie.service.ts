@@ -41,7 +41,7 @@ export class MovieService {
 
   /* GET movies whose name contains search term */
   searchMovies(term: string): Observable<Movie[]> {
-    if (!term.trim()) {
+    if (term.trim().length < 3) {
       // if not search term, return empty movie array.
       return of([]);
     }
