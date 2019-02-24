@@ -20,16 +20,16 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 10, name: 'Tornado', year: 2019, category: 'Comedy', rating: null }
     ];
     const lists = [
-      { id: 0, name: 'Drama' },
-      { id: 1, name: 'Sci-Fi' },
-      { id: 2, name: 'Comedy' }
+      { id: 1, name: 'Drama' },
+      { id: 2, name: 'Sci-Fi' },
+      { id: 3, name: 'Comedy' }
     ];
     return { movies, lists };
   }
 
   // Overrides the genId method to ensure that a movie always has an id.
   // If the movies array is empty,
-  // the method below returns the initial number (11).
+  // the method below returns the initial number (1).
   // if the movies array is not empty, the method below returns the highest
   // movie id + 1.
   genId(movies: Movie[]): number {

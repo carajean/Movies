@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* global styles */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Righteous', cursive;
+}
+
+p,
+a,
+button,
+input {
+  font-family: 'Raleway', sans-serif;
+}
