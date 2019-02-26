@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{9520E444-2310-481B-9AC6-0937DFA9F8BB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/ValuesController.cs">
+    <Files>
+      <File FileName="movies/moviesContext.cs" Line="6" Column="2" />
+      <File FileName="Startup.cs" Line="56" Column="48" />
+      <File FileName="appsettings.json" Line="9" Column="101" />
+      <File FileName="Properties/launchSettings.json" Line="23" Column="31" />
+      <File FileName="Controllers/ValuesController.cs" Line="17" Column="41" />
+      <File FileName="movies/Movies.cs" Line="1" Column="1" />
+      <File FileName="movies/Movie.cs" Line="1" Column="1" />
+      <File FileName="Migrations/moviesContextModelSnapshot.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20190226203833_First migration.Designer.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20190226203833_First migration.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20190226205304_Initial.Designer.cs" Line="1" Column="1" />
+      <File FileName="Migrations/20190226205304_Initial.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Controllers/MovieController.cs" Line="36" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MagnificentMovieMenu" expanded="True">
+            <Node name="MagnificentMovieMenu" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="ValuesController.cs" selected="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
+              <Node name="movies" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MagnificentMovieMenu PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
