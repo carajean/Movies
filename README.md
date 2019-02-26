@@ -25,3 +25,4 @@
 - [ ] auto-populate: use http://omdbapi.com/ or https://www.themoviedb.org or any other API you find that returns the data you need
 - [ ] deploy project
 - [ ] send link to deployed app && send GitHub link
+      test
