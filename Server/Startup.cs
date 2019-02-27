@@ -29,7 +29,7 @@ namespace MagnificentMovieMenu
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<moviesContext>(options =>
-                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<moviesContext>()
                 .AddDefaultTokenProviders();

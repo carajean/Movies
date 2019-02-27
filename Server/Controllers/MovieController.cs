@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using MagnificentMovieMenu.movies;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace MagnificentMovieMenu.Controllers
 {
-  [Route("api/movie")]
+    [Route("api/movie")]
   public class MovieController : Controller
   {
     private moviesContext db = new moviesContext();
@@ -22,22 +19,16 @@ namespace MagnificentMovieMenu.Controllers
     }
 
     // GET api/movie/:id
-    [HttpGet("{id}")]
-    public string Get(int id)
+    [HttpGet("{title}")]
+    public Movie Get(string title)
     {
       {
-        var movie = db.Movie.First(t => t.Id == id);
-        return movie.ToString();
-      }
-    }
-
-    // GET api/movie/:category
-    [HttpGet("{category}")]
-    public string Get(string category)
-    {
-      {
-        var movies = db.Movie.Select(t => t.Category == category);
-        return movies.ToString();
+                //var movie = db.Movie.First(t => t.Name == title);
+                //return movie.Name;
+                var data = from m in db.Movie
+                           where m.Name == title
+                           select m;
+                return data.SingleOrDefault();
       }
     }
 

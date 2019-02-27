@@ -3,14 +3,16 @@ using System;
 using MagnificentMovieMenu.movies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MagnificentMovieMenu.Migrations
 {
     [DbContext(typeof(moviesContext))]
-    partial class moviesContextModelSnapshot : ModelSnapshot
+    [Migration("20190227210452_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
