@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "bf12b538369b22c019105fafb1c59d2cdc49aa11"
+    "signature": "4fe141d06a5b941bfd18482a0dff6191fbbe5b0f"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Movies/1.0.0": {
         "dependencies": {
+          "AngularJS.Core": "1.7.7",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.2",
@@ -38,6 +39,7 @@
           "Movies.dll": {}
         }
       },
+      "AngularJS.Core/1.7.7": {},
       "Google.Protobuf/3.5.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
@@ -3350,6 +3352,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AngularJS.Core/1.7.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w8HTaqYEXmr+5nvZv9AkDIujGLaecMP39WZ1Xc1S+3fg2T81HejWrrUTikawPg+2N2hSPvQ2KO3VKd7WwBEdEQ==",
+      "path": "angularjs.core/1.7.7",
+      "hashPath": "angularjs.core.1.7.7.nupkg.sha512"
     },
     "Google.Protobuf/3.5.1": {
       "type": "package",

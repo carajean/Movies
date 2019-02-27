@@ -2,6 +2,9 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AngularJS.Core/1.7.7": {
+        "type": "package"
+      },
       "Google.Protobuf/3.5.1": {
         "type": "package",
         "dependencies": {
@@ -4532,6 +4535,21 @@
     }
   },
   "libraries": {
+    "AngularJS.Core/1.7.7": {
+      "sha512": "w8HTaqYEXmr+5nvZv9AkDIujGLaecMP39WZ1Xc1S+3fg2T81HejWrrUTikawPg+2N2hSPvQ2KO3VKd7WwBEdEQ==",
+      "type": "package",
+      "path": "angularjs.core/1.7.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "angularjs.core.1.7.7.nupkg.sha512",
+        "angularjs.core.nuspec",
+        "content/Scripts/angular-mocks.js",
+        "content/Scripts/angular.js",
+        "content/Scripts/angular.min.js",
+        "content/Scripts/angular.min.js.map"
+      ]
+    },
     "Google.Protobuf/3.5.1": {
       "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
       "type": "package",
@@ -12289,6 +12307,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AngularJS.Core >= 1.7.7",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 2.2.2",
@@ -12336,6 +12355,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AngularJS.Core": {
+            "target": "Package",
+            "version": "[1.7.7, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
