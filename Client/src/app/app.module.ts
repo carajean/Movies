@@ -13,6 +13,7 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { ListService } from './list.service';
+import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListService } from './list.service';
     MoviesComponent,
     MovieDetailComponent,
     DashboardComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

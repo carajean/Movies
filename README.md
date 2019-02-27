@@ -17,8 +17,8 @@
 
 ## Tech
 
-- [ ] SPA using Angular
-- [ ] all JS/Angular uses TypeScript
+- [x] SPA using Angular
+- [x] all JS/Angular uses TypeScript
 - [x] backend: uses C# ASP.Net Core, making C# Web API REST endpoints
 - [x] database: use MS SQL or MySQL
 - [x] use GitHub for source control

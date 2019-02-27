@@ -12301,11 +12301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/carolyn/Desktop/MoviesProject/Movies/Server/MagnificentMovieMenu.csproj",
+      "projectUniqueName": "/Users/carolyn/Desktop/Movies/Server/MagnificentMovieMenu.csproj",
       "projectName": "MagnificentMovieMenu",
-      "projectPath": "/Users/carolyn/Desktop/MoviesProject/Movies/Server/MagnificentMovieMenu.csproj",
+      "projectPath": "/Users/carolyn/Desktop/Movies/Server/MagnificentMovieMenu.csproj",
       "packagesPath": "/Users/carolyn/.nuget/packages/",
-      "outputPath": "/Users/carolyn/Desktop/MoviesProject/Movies/Server/obj/",
+      "outputPath": "/Users/carolyn/Desktop/Movies/Server/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
