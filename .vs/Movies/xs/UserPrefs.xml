@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{675F4172-62C1-474C-8DD2-4A2777265CE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/ClientApp/src/app/list.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Startup.cs">
     <Files>
       <File FileName="Server/movies/moviesContext.cs" Line="8" Column="10" />
       <File FileName="Server/movies/Movie.cs" Line="1" Column="1" />
       <File FileName="Server/movies/List.cs" Line="1" Column="1" />
-      <File FileName="Server/Startup.cs" Line="52" Column="14" />
-      <File FileName="Server/Program.cs" Line="17" Column="1" />
-      <File FileName="Server/Properties/launchSettings.json" Line="24" Column="70" />
+      <File FileName="Server/Startup.cs" Line="1" Column="1" />
+      <File FileName="Server/Program.cs" Line="1" Column="1" />
+      <File FileName="Server/Properties/launchSettings.json" Line="1" Column="1" />
       <File FileName="Server/appsettings.json" Line="1" Column="1" />
       <File FileName="Server/Controllers/MovieController.cs" Line="20" Column="1" />
       <File FileName="Server/Controllers/ListController.cs" Line="32" Column="7" />
@@ -21,13 +21,12 @@
       <File FileName="Server/obj/MagnificentMovieMenu.csproj.nuget.g.props" Line="1" Column="1" />
       <File FileName="Server/obj/MagnificentMovieMenu.csproj.nuget.g.targets" Line="1" Column="1" />
       <File FileName="Server/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Server/ClientApp/src/app/dashboard/dashboard.component.ts" Line="1" Column="44" />
-      <File FileName="Server/ClientApp/src/app/list.service.ts" Line="11" Column="1" />
-      <File FileName="Server/ClientApp/src/app/movie/movie.service.ts" Line="1" Column="1" />
-      <File FileName="Server/ClientApp/src/app/app-routing.module.ts" Line="1" Column="1" />
-      <File FileName="Server/ClientApp/src/tsconfig.app.json" Line="15" Column="1" />
-      <File FileName="Server/ClientApp/src/tsconfig.spec.json" Line="1" Column="1" />
-      <File FileName="Server/ClientApp/src/app/list.ts" Line="1" Column="1" />
+      <File FileName="ClientApp/src/app/dashboard/dashboard.component.ts" Line="1" Column="44" />
+      <File FileName="ClientApp/src/app/list.service.ts" Line="27" Column="50" />
+      <File FileName="ClientApp/src/app/movie/movie.service.ts" Line="1" Column="1" />
+      <File FileName="ClientApp/src/tsconfig.app.json" Line="15" Column="1" />
+      <File FileName="ClientApp/src/tsconfig.spec.json" Line="1" Column="1" />
+      <File FileName="ClientApp/src/app/list.ts" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,25 +34,12 @@
           <Node name="Movies" expanded="True">
             <Node name="Movies" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="ClientApp" expanded="True">
-                  <Node name="src" expanded="True">
-                    <Node name="app" expanded="True">
-                      <Node name="dashboard" expanded="True" />
-                      <Node name="movie" expanded="True" />
-                      <Node name="list.ts" selected="True" />
-                    </Node>
-                  </Node>
-                </Node>
-                <Node name="Controllers" expanded="True" />
-                <Node name="movies" expanded="True" />
+                <Node name="ClientApp" selected="True" />
                 <Node name="Properties" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

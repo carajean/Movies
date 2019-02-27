@@ -4536,7 +4536,7 @@
   },
   "libraries": {
     "AngularJS.Core/1.7.7": {
-      "sha512": "w8HTaqYEXmr+5nvZv9AkDIujGLaecMP39WZ1Xc1S+3fg2T81HejWrrUTikawPg+2N2hSPvQ2KO3VKd7WwBEdEQ==",
+      "sha512": "xlfms+2mpd//u1BKTb2S/cJRlteAnPweqnwlIJmxuqFsIqw477l05PwlpQxov6JlJHWYh771ek+0KZiGcUIqqA==",
       "type": "package",
       "path": "angularjs.core/1.7.7",
       "files": [
@@ -4551,7 +4551,7 @@
       ]
     },
     "Google.Protobuf/3.5.1": {
-      "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
+      "sha512": "j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
       "type": "package",
       "path": "google.protobuf/3.5.1",
       "files": [
@@ -4566,7 +4566,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
+      "sha512": "91JMnE9zdIDphG00qgRvl8ZwKEjqAbNlJdfXUoMiIWPfpYyH7fyCsTSj6/aynRdw/Qr/K70xC7QC6MOJ1vFBJQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.client/5.2.6",
       "files": [
@@ -6006,7 +6006,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.2.2": {
-      "sha512": "/j1tKR7x0wCnm9oSlfgBuh8n1aTZEVf+Aehi0AVMdDeFOnfvY4YrzIz6lsnApY/GfHUA/qyinb0e53ZpIla73Q==",
+      "sha512": "WBQhms1wB9V43TRXB/V8qUw8j8dEI2Ew5LZvqkBYct6khD9QpIuVpzUtUwJATOFC8WKaGgowSA0E0L7pNoLQfw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.2",
       "files": [
@@ -6019,7 +6019,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.2": {
-      "sha512": "qhT7GxIoMldafNNxPXUKNVtxCGk8mH2MXgGO/yJCsN1bsP1jhkDLVmpLAS0Mz0uGIZvGxuIWF5HQ+lCLwHacCg==",
+      "sha512": "qTR9OSjKEoxxoZ/G/XbSPZsdxueiWUHgWU+XrOfQAm4+dcY0XEenR4BXT5gQeVGzPrLsQb3loQhgjmKKLdI5LA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.2",
       "files": [
@@ -6032,7 +6032,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.2": {
-      "sha512": "0EHbLoFkbjhD/9prSNyvETsRleYNa38QeadLNlaKJSAm8l7sQN451rk/WOKL2BOUO5RfA4IcRqCc2g3wWo06GA==",
+      "sha512": "t+9kW6MwDDrGPPx15c2AIE2f6DM9nbGcHThagg9rcUZz6shmC8LS1Qhd5TSocKHmJafa+hHhBfDNGPyDDeNfHQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.2",
       "files": [
@@ -7328,7 +7328,7 @@
       ]
     },
     "MySql.Data/8.0.15": {
-      "sha512": "PnjT2+TzlYUBF5cILcLMD1ux85P5iiRTF9PWx+Mel6/Z/rx+k39aWuA0mozfdgd+0TlJjGKKTyQZfKeYlRXTUA==",
+      "sha512": "ZKqJdSsIHoBQZbGUT6KNWdq+22NBPLxcrsnBj5BSLmVePRhrlCQew8jq38hLoJCoubdc4zP1D0xJo3DYgeuIpg==",
       "type": "package",
       "path": "mysql.data/8.0.15",
       "files": [
@@ -7347,7 +7347,7 @@
       ]
     },
     "MySqlConnector/0.49.2": {
-      "sha512": "AMdiJ1anymn/MnvSKkaWfZXs49WUsdGi/5nlVGIOQ5QYhRZIfAFobht+Y7rK1UtEUzbqnjCKUBI6Zpp4zzRupQ==",
+      "sha512": "2T3TB//uQatJVYggH/gcMRyUA+y9MDOBHZwL+Ygd8mboTvJ/pyfINcz+B/oGiHTaWxHa6xcf8j4BTiuxKaTy9A==",
       "type": "package",
       "path": "mysqlconnector/0.49.2",
       "files": [
@@ -7537,7 +7537,7 @@
       ]
     },
     "Pomelo.EntityFrameworkCore.MySql/2.2.0": {
-      "sha512": "OIIR2ASp8J5VyIf2i9cli8BjvD0kZl5zCwi4DBR/E/D0WVt+iZyKwGhCLt1V9+KiXQbYcYAujuKN3cMmwk5nZg==",
+      "sha512": "wSZfJiDhN4DX4X8tYeUCuP9L/9P0w8Q155dHRDBSvi7XxUPFnZYsRk1o9QiJm/Z+2LmZ4ad9Q4mJJ4L0vo6BlA==",
       "type": "package",
       "path": "pomelo.entityframeworkcore.mysql/2.2.0",
       "files": [
@@ -7549,7 +7549,7 @@
       ]
     },
     "Pomelo.JsonObject/2.2.0": {
-      "sha512": "dfe8owsB+u9amQhZHKCPy2YiIt9tK4iX3dBoSwKlNd2cbi7Yh38XU93LjlYVJ+8HhxS9UgDoUbhYEt3jXTxBRQ==",
+      "sha512": "kAH3WjIyzHvSjYEQ4h63WJLtpA9PfbgOdEIalL668KvDo3PIlT/2lSFMhXXGrYgGcD1bthszXXs7BASooRXZgA==",
       "type": "package",
       "path": "pomelo.jsonobject/2.2.0",
       "files": [
@@ -8255,7 +8255,7 @@
       ]
     },
     "System.Configuration.ConfigurationManager/4.4.1": {
-      "sha512": "jz3TWKMAeuDEyrPCK5Jyt4bzQcmzUIMcY9Ud6PkElFxTfnsihV+9N/UCqvxe1z5gc7jMYAnj7V1COMS9QKIuHQ==",
+      "sha512": "LoSjM/kLDpyLyoGsmwS5oVMRzHf/0XHkRpr3QZu/HuAv6Sfk919usTMLqD9N9VK3S4Q2+bd3tKJ0ko4MYFfq4Q==",
       "type": "package",
       "path": "system.configuration.configurationmanager/4.4.1",
       "files": [
@@ -9508,7 +9508,7 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "c4788pUd6VsDvjp+L0BWqKr90FLnAhxDtZiq03nt7sDlhtRXKfsdyDx7hFayMxMUtVEkZkQpga7zu8HKyrz+sw==",
+      "sha512": "px5q095bgOdrdsyz/WWeNjxkkbqSCGZ6ehrRoIXG3qDmp6sBHgeE0vse+LdX2rl6+pJDjW2oVwh/6iQcwytPXw==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
@@ -11150,7 +11150,7 @@
       ]
     },
     "System.Security.Cryptography.ProtectedData/4.4.0": {
-      "sha512": "cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "sha512": "WwEexvBd+17yfY7fcS+fBGl+HADEfCJuKeDJqBT7D6j6vKwYvfLyGuq2y/MmrKORC6mbYwth7kjinO1mPhTL3g==",
       "type": "package",
       "path": "system.security.cryptography.protecteddata/4.4.0",
       "files": [
@@ -12333,7 +12333,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/carolyn/.nuget/NuGet/NuGet.Config"
+        "/Users/carolyn/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
