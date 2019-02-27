@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-import { Movie } from '../movie';
+import { Movie } from '../../movie/movie';
 import { MovieService } from '../movie.service';
 
 @Component({

@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
-import { List } from '../list';
+import { List } from '../../list';
 
 @Component({
   selector: 'app-movies',

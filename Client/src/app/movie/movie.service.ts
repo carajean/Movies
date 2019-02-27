@@ -92,3 +92,63 @@ export class MovieService {
     };
   }
 }
+
+// import { Injectable } from '@angular/core';
+// import { HttpClient, HttpParams } from '@angular/common/http';
+// import { HttpHeaders } from '@angular/common/http';
+// import { Observable } from 'rxjs';
+// import { catchError } from 'rxjs/operators';
+
+// import { Movie } from './movie';
+
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type': 'application/json',
+//     Authorization: 'my-auth-token'
+//   })
+// };
+
+// @Injectable()
+// export class MovieService {
+//   moviesUrl = 'api/movie'; // URL to web api
+
+//   constructor(private http: HttpClient) {}
+
+//   /** GET movies from the server */
+//   getMovies(): Observable<Movie[]> {
+//     return this.http.get<Movie[]>(this.moviesUrl);
+//   }
+
+//   /* GET movies whose name contains search term */
+//   searchMovies(term: string): Observable<Movie[]> {
+//     term = term.trim();
+
+//     // Add safe, URL encoded search parameter if there is a search term
+//     const options = term ? { params: new HttpParams().set('name', term) } : {};
+
+//     return this.http.get<Movie[]>(this.moviesUrl, options);
+//   }
+
+//   //////// Save methods //////////
+
+//   /** POST: add a new movie to the database */
+//   addMovie(movie: Movie): Observable<Movie> {
+//     return this.http.post<Movie>(this.moviesUrl, movie, httpOptions);
+//   }
+
+//   /** DELETE: delete the movie from the server */
+//   deleteMovie(id: number): Observable<{}> {
+//     const url = `${this.moviesUrl}/${id}`; // DELETE api/movies/42
+//     return this.http.delete(url, httpOptions);
+//   }
+
+//   /** PUT: update the movie on the server. Returns the updated movie upon success. */
+//   updateMovie(movie: Movie): Observable<Movie> {
+//     httpOptions.headers = httpOptions.headers.set(
+//       'Authorization',
+//       'my-new-auth-token'
+//     );
+
+//     return this.http.put<Movie>(this.moviesUrl, movie, httpOptions);
+//   }
+// }
