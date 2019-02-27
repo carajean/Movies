@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{675F4172-62C1-474C-8DD2-4A2777265CE5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Startup.cs">
     <Files>
       <File FileName="Server/movies/moviesContext.cs" Line="8" Column="10" />
       <File FileName="Server/movies/Movie.cs" Line="1" Column="1" />
       <File FileName="Server/movies/List.cs" Line="1" Column="1" />
-      <File FileName="Server/Startup.cs" Line="59" Column="14" />
-      <File FileName="Server/Program.cs" Line="1" Column="1" />
+      <File FileName="Server/Startup.cs" Line="32" Column="13" />
+      <File FileName="Server/Program.cs" Line="17" Column="1" />
       <File FileName="Server/Properties/launchSettings.json" Line="1" Column="1" />
       <File FileName="Server/appsettings.json" Line="1" Column="1" />
       <File FileName="Server/Controllers/MovieController.cs" Line="20" Column="1" />
@@ -27,16 +27,13 @@
         <State name="__root__">
           <Node name="Movies" expanded="True">
             <Node name="Movies" expanded="True">
-              <Node name="Server" expanded="True">
-                <Node name="movies" expanded="True" />
-                <Node name="obj" expanded="True" />
-                <Node name="Properties" expanded="True">
-                  <Node name="launchSettings.json" selected="True" />
-                </Node>
-              </Node>
+              <Node name="Server" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
