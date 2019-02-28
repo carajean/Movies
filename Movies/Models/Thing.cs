@@ -1,4 +1,4 @@
-﻿namespace AngularWebpackVisualStudio.Models
+﻿namespace MagnificentMovieMenu.Models
 {
     public class Thing
     {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace AngularWebpackVisualStudio
+namespace MagnificentMovieMenu
 {
     public class Program
     {

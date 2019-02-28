@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using AngularWebpackVisualStudio.Models;
-using AngularWebpackVisualStudio.Repositories.Things;
+using MagnificentMovieMenu.Models;
+using MagnificentMovieMenu.Repositories.Things;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AngularWebpackVisualStudio.Controller
+namespace MagnificentMovieMenu.Controller
 {
     [Route("api/[controller]")]
     public class ThingsController : Microsoft.AspNetCore.Mvc.Controller

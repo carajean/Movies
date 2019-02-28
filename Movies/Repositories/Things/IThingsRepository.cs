@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AngularWebpackVisualStudio.Models;
+using MagnificentMovieMenu.Models;
 
-namespace AngularWebpackVisualStudio.Repositories.Things
+namespace MagnificentMovieMenu.Repositories.Things
 {
     public interface IThingsRepository
     {

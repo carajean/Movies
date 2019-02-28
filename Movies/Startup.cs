@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using AngularWebpackVisualStudio.Repositories.Things;
+using MagnificentMovieMenu.Repositories.Things;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AngularWebpackVisualStudio
+namespace MagnificentMovieMenu
 {
     public class Startup
     {

@@ -2,9 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using AngularWebpackVisualStudio.Models;
+using MagnificentMovieMenu.Models;
 
-namespace AngularWebpackVisualStudio.Repositories.Things
+namespace MagnificentMovieMenu.Repositories.Things
 {
     public class ThingsRepository : IThingsRepository
     {
