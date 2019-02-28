@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MagnificentMovieMenu.movies
+namespace MagnificentMovieMenu.MagnificentMovieMenu
 {
     public partial class moviesContext : DbContext
     {

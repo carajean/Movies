@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MagnificentMovieMenu.movies
+namespace MagnificentMovieMenu.MagnificentMovieMenu
 {
     public partial class Movie
     {

@@ -2,7 +2,7 @@
 
 namespace MagnificentMovieMenu.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace MagnificentMovieMenu.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int(11)", nullable: false),
-                    List = table.Column<string>(unicode: false, maxLength: 45, nullable: false)
+                    Name = table.Column<string>(unicode: false, maxLength: 45, nullable: false)
                 },
                 constraints: table =>
                 {

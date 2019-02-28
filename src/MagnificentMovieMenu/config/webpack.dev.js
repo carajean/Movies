@@ -1,5 +1,6 @@
 const path = require('path');
 const rxPaths = require('rxjs/_esm5/path-mapping');
+const browserPlugin = require('webpack-browser-plugin');
 
 const webpack = require('webpack');
 
@@ -11,6 +12,7 @@ const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const helpers = require('./webpack.helpers');
 
 const ROOT = path.resolve(__dirname, '..');
+const chromeUserDataDir = ROOT;
 
 console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
 
@@ -44,6 +46,9 @@ module.exports = {
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   },
 
@@ -89,8 +94,8 @@ module.exports = {
     exprContextCritical: false
   },
   plugins: [
-    function () {
-      this.plugin('watch-run', function (watching, callback) {
+    function() {
+      this.plugin('watch-run', function(watching, callback) {
         console.log(
           '\x1b[33m%s\x1b[0m',
           `Begin compile at ${new Date().toTimeString()}`
@@ -126,5 +131,16 @@ module.exports = {
     new FilterWarningsPlugin({
       exclude: /System.import/
     })
+
+    // new browserPlugin({
+    //   openOptions: {
+    //     app: [
+    //       'chrome',
+    //       //'--incognito',
+    //       '--disable-web-security', // to enable CORS
+    //       '--user-data-dir=' + path.resolve(chromeUserDataDir) // to let Chrome create and store here developers plugins, settings, etc.
+    //     ]
+    //   }
+    // })
   ]
 };

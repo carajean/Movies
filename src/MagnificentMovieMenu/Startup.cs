@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MagnificentMovieMenu.Repositories.Things;
-using Microsoft.AspNetCore.Mvc;
-using MagnificentMovieMenu.movies;
+//using MagnificentMovieMenu.movies;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MagnificentMovieMenu
 {
@@ -30,19 +30,22 @@ namespace MagnificentMovieMenu
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<moviesContext>(options =>
-              options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+      //services.AddDbContext<moviesContext>(options =>
+              //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+      
       services.AddCors(options =>
       {
-        options.AddPolicy("AllowAllOrigins",
-                  builder =>
-                  {
-                builder
-                          .AllowAnyOrigin()
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
-              });
+        options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder
+              .AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+         });
       });
+
       // Add framework services.
       services.AddSingleton<IThingsRepository, ThingsRepository>();
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -67,7 +70,8 @@ namespace MagnificentMovieMenu
         await next();
       });
 
-      app.UseCors("AllowAllOrigins");
+      app.UseCors("AllowAll");
+      //app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
 
       app.UseDefaultFiles();
       app.UseStaticFiles();

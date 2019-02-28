@@ -8,8 +8,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.2" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.13" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <!-- <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="movies\List.cs" />
+    <Compile Remove="movies\Movie.cs" />
+    <Compile Remove="movies\moviesContext.cs" />
   </ItemGroup>
 </Project>
