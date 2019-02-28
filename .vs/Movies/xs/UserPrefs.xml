@@ -34,8 +34,7 @@
           <Node name="Movies" expanded="True">
             <Node name="Movies" expanded="True">
               <Node name="Server" expanded="True">
-                <Node name="ClientApp" selected="True" />
-                <Node name="Properties" expanded="True" />
+                <Node name="Startup.cs" selected="True" />
               </Node>
             </Node>
           </Node>
