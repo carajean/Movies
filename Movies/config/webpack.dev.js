@@ -69,12 +69,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['to-string-loader', 'css-loader']
       },
       {
         test: /\.scss$/,
         include: path.join(ROOT, 'Client/styles'),
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['raw-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.scss$/,

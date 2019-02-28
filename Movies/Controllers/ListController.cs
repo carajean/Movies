@@ -9,8 +9,8 @@ using Newtonsoft.Json.Linq;
 
 namespace MagnificentMovieMenu.Controllers
 {
-  [Route("api/list")]
-  public class ListController : Controller
+  [Route("api/lists")]
+  public class ListController : Microsoft.AspNetCore.Mvc.Controller
   {
     private moviesContext db = new moviesContext();
 

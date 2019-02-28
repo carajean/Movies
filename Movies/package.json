@@ -38,6 +38,7 @@
     "ie-shim": "0.1.0",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.4.0",
+    "to-string-loader": "^1.1.5",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
