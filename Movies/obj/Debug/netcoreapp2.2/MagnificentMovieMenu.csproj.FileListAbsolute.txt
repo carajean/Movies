@@ -1,0 +1,6 @@
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.csprojAssemblyReference.cache
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.csproj.CoreCompileInputs.cache
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.RazorAssemblyInfo.cache
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.RazorAssemblyInfo.cs
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.AssemblyInfoInputs.cache
+/Users/carolyn/Desktop/Movies/Movies/obj/Debug/netcoreapp2.2/MagnificentMovieMenu.AssemblyInfo.cs

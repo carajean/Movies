@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{31C4705E-03F4-4B15-83AD-E950FF0A5B16}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Movies/movies/moviesContext.cs">
+    <Files>
+      <File FileName="Movies/Startup.cs" Line="1" Column="1" />
+      <File FileName="Movies/Controllers/ListController.cs" Line="1" Column="1" />
+      <File FileName="Movies/Controllers/ThingsController.cs" Line="7" Column="43" />
+      <File FileName="Movies/Controllers/MovieController.cs" Line="7" Column="43" />
+      <File FileName="Movies/movies/moviesContext.cs" Line="4" Column="7" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Movies" expanded="True">
+            <Node name="Movies" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Movies" expanded="True">
+                <Node name="Client" expanded="True">
+                  <Node name="app" expanded="True" />
+                </Node>
+                <Node name="Controllers" expanded="True" />
+                <Node name="movies" expanded="True">
+                  <Node name="moviesContext.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Movies PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

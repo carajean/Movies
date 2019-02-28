@@ -1,0 +1,20 @@
+<h3>My Movie Menu</h3>
+<div>
+  <label>
+    <input #listName placeholder="Add Category"/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(listName.value); listName.value=''">
+    Submit
+  </button>
+</div>
+<div class="grid grid-pad">
+  <div *ngFor="let list of lists" class="col-1-4">
+    <a routerLink="lists/{{list.name}}">
+      <div class="module list">
+        <h4>{{list.name}}</h4>
+      </div>
+    </a>
+    <button class="delete" title="delete list" (click)="delete(list)">x</button>
+  </div>
+</div>
