@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ThingService } from './../../core/services/thing-data.service';
-import { Thing } from './../../models/thing';
+import { ThingService } from '../../core/services/thing-data.service';
+import { Thing } from '../../models/thing';
 
 @Component({
-  selector: 'app-home-component',
-  templateUrl: './home.component.html'
+  selector: 'app-menu-component',
+  templateUrl: './menu.component.html'
 })
-export class HomeComponent implements OnInit {
+export class MenuComponent implements OnInit {
   message: string;
   things: Thing[] = [];
   thing: Thing = new Thing();
 
   constructor(private dataService: ThingService) {
-    this.message = 'Things from the ASP.NET Core API';
+    this.message = 'Magnificent Movie Menu';
   }
 
   ngOnInit() {

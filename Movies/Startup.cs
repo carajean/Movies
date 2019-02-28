@@ -49,7 +49,7 @@ namespace MagnificentMovieMenu
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             var angularRoutes = new[] {
-                 "/home",
+                 "/menu",
                  "/about"
              };
 
@@ -73,7 +73,7 @@ namespace MagnificentMovieMenu
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Menu}/{action=Index}/{id?}");
             });
         }
     }
