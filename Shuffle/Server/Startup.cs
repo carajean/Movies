@@ -42,36 +42,6 @@ namespace MagnificentMovieMenu
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
     }
 
-<<<<<<< HEAD
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            app.Use(async (HttpContext context, Func<Task> next) =>
-            {
-                await next.Invoke();
-
-                if (context.Response.StatusCode == 404 && !context.Request.Path.Value.Contains('/api'))
-                {
-                    context.Request.Path = new PathString("/index.html");
-                    await next.Invoke();
-                }
-            });
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-
-                app.UseHttpsRedirection();
-            }
-
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-=======
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
@@ -86,7 +56,6 @@ namespace MagnificentMovieMenu
       }
 
       app.UseStaticFiles();
->>>>>>> tmp
 
       //app.UseSpaStaticFiles();
       //app.UseSpa(spa =>
@@ -98,15 +67,9 @@ namespace MagnificentMovieMenu
       //    }
       //});
 
-<<<<<<< HEAD
-            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
-            //app.UseHttpsRedirection();
-            app.UseMvc();
-=======
       app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
       app.UseHttpsRedirection();
       app.UseMvc();
->>>>>>> tmp
 
       //dbContext.Database.EnsureCreated();
     }
