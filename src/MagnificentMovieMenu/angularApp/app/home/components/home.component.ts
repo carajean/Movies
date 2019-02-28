@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ThingService } from './../../core/services/thing-data.service';
-import { Thing } from './../../models/thing';
+import { ListService } from './../../core/services/list-data.service';
+import { List } from './../../models/list';
 
 @Component({
   selector: 'app-home-component',
@@ -9,22 +9,22 @@ import { Thing } from './../../models/thing';
 })
 export class HomeComponent implements OnInit {
   message: string;
-  things: Thing[] = [];
-  thing: Thing = new Thing();
+  lists: List[] = [];
+  list: List = new List();
 
-  constructor(private dataService: ThingService) {
-    this.message = 'Things from the ASP.NET Core API';
+  constructor(private dataService: ListService) {
+    this.message = 'Lists from the ASP.NET Core API';
   }
 
   ngOnInit() {
-    this.getAllThings();
+    this.getAllLists();
   }
 
-  addThing() {
-    this.dataService.add(this.thing).subscribe(
+  addList() {
+    this.dataService.add(this.list).subscribe(
       () => {
-        this.getAllThings();
-        this.thing = new Thing();
+        this.getAllLists();
+        this.list = new List();
       },
       error => {
         console.log(error);
@@ -32,10 +32,10 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  deleteThing(thing: Thing) {
-    this.dataService.delete(thing.id).subscribe(
+  deleteList(list: List) {
+    this.dataService.delete(list.id).subscribe(
       () => {
-        this.getAllThings();
+        this.getAllLists();
       },
       error => {
         console.log(error);
@@ -43,11 +43,11 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  private getAllThings() {
+  private getAllLists() {
     this.dataService
       .getAll()
       .subscribe(
-        data => (this.things = data),
+        data => (this.lists = data),
         error => console.log(error),
         () => console.log('Get all complete')
       );

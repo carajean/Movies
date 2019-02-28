@@ -3,21 +3,21 @@
         {{message}}
     </h1>
 </div>
-<form #thingForm="ngForm" (ngSubmit)="addThing()">
+<form #listForm="ngForm" (ngSubmit)="addList()">
     <div class="row">
         <div class="col-6">
             <div class="input-group">
-                <label class="sr-only" for="exampleInputThing">Thing</label>
-                <input [(ngModel)]="thing.name" class="form-control" id="exampleInputThing" name="thing" placeholder="Name of the thing ..." required
+                <label class="sr-only" for="exampleInputList">List</label>
+                <input [(ngModel)]="list.name" class="form-control" id="exampleInputList" name="list" placeholder="Name of the list ..." required
                        type="text">
                 <span class="input-group-btn">
-                    <button [disabled]="!thingForm.valid" class="btn btn-primary" type="submit">Create new Thing</button>
+                    <button [disabled]="!listForm.valid" class="btn btn-primary" type="submit">Create new List</button>
                 </span>
             </div>
         </div>
     </div>
 </form>
-<div *ngIf="things.length > 0" class="mt-4 row">
+<div *ngIf="lists.length > 0" class="mt-4 row">
     <div class="col-12 table-responsive">
         <table class="table table-striped">
             <thead>
@@ -28,18 +28,18 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let thing of things; let i = index">
+            <tr *ngFor="let list of lists; let i = index">
                 <td>{{i + 1}}</td>
-                <td>{{thing.name}}</td>
+                <td>{{list.name}}</td>
                 <td class="text-right">
-                    <button (click)="deleteThing(thing)" class="btn btn-danger btn-sm" type="button">Delete</button>
+                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">Delete</button>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
-<div *ngIf="things.length <= 0" class="mt-4 row">
+<div *ngIf="lists.length <= 0" class="mt-4 row">
     <div class="col-12">
         <div class="alert alert-warning">
             No items found

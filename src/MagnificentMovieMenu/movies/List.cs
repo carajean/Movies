@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MagnificentMovieMenu.movies
+namespace MagnificentMovieMenu.Models
+
 {
     public partial class List
     {
