@@ -3,12 +3,15 @@ using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AngularWebpackVisualStudio.Repositories.Things;
 using Microsoft.AspNetCore.Mvc;
 using MagnificentMovieMenu.movies;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace AngularWebpackVisualStudio
 {
@@ -31,9 +34,9 @@ namespace AngularWebpackVisualStudio
     {
       services.AddDbContext<moviesContext>(options =>
         options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-      services.AddIdentity<IdentityUser, IdentityRole>()
-          .AddEntityFrameworkStores<moviesContext>()
-          .AddDefaultTokenProviders();
+      //services.AddIdentity<IdentityUser, IdentityRole>()
+          //.AddEntityFrameworkStores<moviesContext>()
+          //.AddDefaultTokenProviders();
       services.AddCors(options =>
       {
         options.AddPolicy("AllowAllOrigins",
