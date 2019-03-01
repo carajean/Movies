@@ -15,12 +15,12 @@ export class IMDBService {
 
   constructor(private http: Http) {}
 
-  getMovies(): Observable<IMDB[]> {
+  getMovies(): void {
     const moviesUrl = `${this.url}popular?api_key=${this.apiKey}&language=${
       this.language
     }`;
 
-    return this.http.get(moviesUrl).map(this.extractData);
+    console.log(JSON.stringify(this.http.get(moviesUrl).map(this.extractData)));
   }
 
   searchMovies(query: string) {

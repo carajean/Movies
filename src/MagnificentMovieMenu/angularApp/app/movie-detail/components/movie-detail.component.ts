@@ -17,7 +17,7 @@ export class MovieDetailComponent implements OnInit {
   nextNum!: number;
   slug!: string;
   movies: Movie[] = [];
-  movie!: Movie;
+  movie: Movie;
   selectedMovie!: IMDB;
 
   constructor(
@@ -35,8 +35,8 @@ export class MovieDetailComponent implements OnInit {
     this.nextNum = 0;
   }
 
-  searchMovie() {
-    const queryStr = this.movie.name.split(' ').join('%20');
+  searchMovie(name: string) {
+    const queryStr = name.split(' ').join('%20');
     return this.imdbService.searchMovies(queryStr);
   }
 
@@ -71,6 +71,7 @@ export class MovieDetailComponent implements OnInit {
         data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
         error => console.log(error)
       );
+    this.searchMovie(this.movie.name);
   }
 
   goBack(): void {
