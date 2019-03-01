@@ -5,10 +5,6 @@
   "main": "wwwroot/index.html",
   "author": "Carolyn Campbell",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/carajean/Movies.git"
-  },
   "scripts": {
     "start": "concurrently \"webpack-dev-server --env=dev --open --hot --inline --port 8080\" \"dotnet run\" ",
     "webpack-dev": "webpack --env=dev",
@@ -28,6 +24,10 @@
   ],
   "engines": {
     "node": "10.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/magnificent-movie-menu"
   },
   "dependencies": {
     "@angular-devkit/build-angular": "~0.13.3",
@@ -57,6 +57,7 @@
     "copy-webpack-plugin": "^5.0.0",
     "core-js": "^2.6.5",
     "css-loader": "^2.1.0",
+    "egs": "^0.3.1",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
@@ -74,6 +75,7 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-webpack": "3.0.5",
     "node-sass": "^4.11.0",
+    "pg": "^7.8.1",
     "protractor": "~5.4.2",
     "raw-loader": "^1.0.0",
     "rimraf": "^2.6.3",
