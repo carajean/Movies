@@ -31,20 +31,6 @@ export class CategoryComponent implements OnInit {
     console.log(`Now viewing category: ${this.category}`);
   }
 
-  // private getSlugs() {
-  //   this.movies.forEach(m => {
-  //     console.log(m.name);
-  //     this.dataService.update(m.id, { slug: m.slug }).subscribe(
-  //       movie => {
-  //         console.log(`Updating slug ${m.slug}`);
-  //         this.slugs.push(movie as Movie);
-  //       },
-  //       error => console.error(error)
-  //     );
-  //   });
-  //   this.movies = this.slugs;
-  // }
-
   addMovie() {
     this.dataService.add(this.movie).subscribe(
       () => {
@@ -70,15 +56,28 @@ export class CategoryComponent implements OnInit {
   }
 
   private getMoviesByCategory() {
-    this.dataService
-      .getAll()
-      .subscribe(
-        data => (
-          (this.movies = data.filter(m => m.category === this.category)),
-          (this.nextNum = data.length)
-        ),
-        error => console.log(error),
-        () => console.log(`Category saved with ${this.nextNum} movies`)
-      );
+    this.dataService.getAll().subscribe(
+      data => (
+        (this.movies = data.filter(m => m.category === this.category)),
+        this.movies.forEach(m => {
+          m.slug = m.name.split(' ').join('');
+          console.log(m.slug);
+          this.dataService
+            .update(m.id, {
+              name: m.name,
+              year: m.year,
+              category: m.category,
+              slug: m.slug
+            })
+            .subscribe(slugM => {
+              this.slugs.push(slugM as Movie);
+            });
+        }),
+        (this.nextNum = this.movies.length)
+      ),
+      error => console.log(error),
+      () => console.log(`Category saved with ${this.nextNum} movies`)
+    );
+    this.movies = this.slugs;
   }
 }
