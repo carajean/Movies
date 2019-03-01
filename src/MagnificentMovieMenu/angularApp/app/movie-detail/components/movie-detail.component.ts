@@ -12,23 +12,23 @@ import { Movie } from './../../models/movie';
 export class MovieDetailComponent implements OnInit {
   message: string;
   nextNum: number;
-  title: string;
+  slug: string;
   movies: Movie[] = [];
-  movie: Movie = new Movie();
+  movie: Movie;
 
   constructor(
     private dataService: MovieService,
     private route: ActivatedRoute,
     private location: Location
   ) {
-    this.message = this.title;
+    this.message = this.slug;
   }
 
   ngOnInit() {
-    this.title = this.route.snapshot.paramMap.get(`slug`);
+    this.slug = this.route.snapshot.paramMap.get(`slug`);
     this.getMovie();
     this.nextNum = 0;
-    console.log(`Now viewing movie: ${this.title}`);
+    console.log(`Now viewing movie: ${this.slug}`);
   }
 
   addMovie() {
@@ -57,11 +57,11 @@ export class MovieDetailComponent implements OnInit {
 
   private getMovie() {
     this.dataService
-      .getSingle(this.title)
+      .getAll()
       .subscribe(
-        data => this.movies.push(data),
+        data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
         error => console.log(error),
-        () => console.log(`Movie: ${this.title}`)
+        () => console.log(`Movie: ${this.movie.name}`)
       );
   }
 
