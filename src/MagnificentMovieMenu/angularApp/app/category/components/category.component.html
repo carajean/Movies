@@ -1,8 +1,8 @@
-﻿<h3>{{this.category}}</h3>
+﻿<h3 class="categoryName">{{this.category}}</h3>
 <br />
-<form #movieForm="ngForm" (ngSubmit)="addMovie()">
-    <div class="row">
-        <div class="col-6">
+<form class="inputField" #movieForm="ngForm" (ngSubmit)="addMovie()">
+    <div class="row justify-content-md-center">
+        <div class="col-5">
             <div class="input-group">
                 <label class="sr-only" for="exampleInputMovie">Movie</label>
                 <input [(ngModel)]="movie.name" class="form-control" id="exampleInputMovie" name="movie" placeholder="Add a movie!" required
@@ -58,3 +58,5 @@
         </div>
     </div>
 </div>
+
+<img id="redTix" src="assets/redTix.png" />

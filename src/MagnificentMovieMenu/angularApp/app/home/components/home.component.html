@@ -1,6 +1,6 @@
-﻿<form #listForm="ngForm" (ngSubmit)="addList()">
-    <div class="row">
-        <div class="col-6">
+﻿<form class="inputField" #listForm="ngForm" (ngSubmit)="addList()">
+    <div class="row justify-content-md-center">
+        <div class="col-5">
             <div class="input-group">
                 <label class="sr-only" for="exampleInputList">List</label>
                 <input [(ngModel)]="list.name" class="form-control" id="exampleInputList" name="list" placeholder="Add a category!" required

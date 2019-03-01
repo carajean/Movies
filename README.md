@@ -4,9 +4,9 @@
 
 ## Features
 
-- [ ] view all lists
-- [ ] create & name an unlimited number of lists
-- [ ] click on list --> view all movies in that list
+- [x] view all lists
+- [x] create & name an unlimited number of lists
+- [x] click on list --> view all movies in that list
 - [ ] add new movies to a list
 - [ ] when adding a movie, auto-populate with movie names from an online movie names API; begin auto-populating selectable choices after three letters are typed
 - [ ] ability to edit movies

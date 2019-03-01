@@ -74,6 +74,22 @@ button {
   margin: 5px;
 }
 
+#redTix {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  bottom: 55%;
+  right: 20%;
+}
+
+.inputField {
+  margin: auto;
+}
+
+.categoryName {
+  color: rgb(70, 1, 97) !important;
+}
+
 [class*='col-'] {
   float: left;
   padding-right: 20px;
