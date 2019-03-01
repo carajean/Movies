@@ -12,19 +12,20 @@
         </div>
     </div>
 </form>
+
 <div *ngIf="movies.length > 0" class="mt-4 row">
     <div class="col-12 table-responsive movieDiv">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>#</th>
-                <th>Category: {{this.category}}</th>
+                <th>Year</th>
+                <th>Menu: {{this.category}}</th>
                 <th class="text-right">&nbsp;</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let movie of movies; let i = index">
-                <td>{{i + 1}}</td>
+                <td>{{movie.year}}</td>
                 <td>{{movie.name}}</td>
                 <td class="text-right">
                     <button (click)="deleteMovie(movie)" class="btn btn-danger btn-sm" type="button">X</button>
@@ -34,7 +35,19 @@
         </table>
     </div>
 </div>
+
 <div *ngIf="movies.length <= 0" class="mt-4 row">
+    <div class="col-12 table-responsive movieDiv">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Menu: {{this.category}}</th>
+                    <th class="text-right">&nbsp;</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
     <div class="col-12">
         <div class="alert alert-warning">
             You don't have any movies in this category!

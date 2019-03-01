@@ -12,32 +12,20 @@
         </div>
     </div>
 </form>
-<div *ngIf="lists.length > 0" class="mt-4 row">
-    <div class="col-12 table-responsive listDiv">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Category</th>
-                <th class="text-right">&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let list of lists; let i = index">
-                <td>{{i + 1}}</td>
-                <td>
-                    <a routerLink="/menu/{{list.name}}" >
-                        {{list.name}}
-                    </a>
-                </td>
-                <td class="text-right">
-                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">X</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+
+<div *ngIf="lists.length > 0" class="grid grid-pad">
+    <div *ngFor="let list of lists" class="col-1-4">
+        <a routerLink="/menu/{{list.name}}">
+            <div class="module list">
+                <h4>
+                    {{list.name}}
+                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm delListBtn" type="button">X</button>
+                </h4>
+            </div>
+        </a>
     </div>
 </div>
+
 <div *ngIf="lists.length <= 0" class="mt-4 row">
     <div class="col-12">
         <div class="alert alert-warning">
