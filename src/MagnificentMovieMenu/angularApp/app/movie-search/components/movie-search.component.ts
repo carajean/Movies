@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
 
-import { IMDB } from './../../models/imdb';
+import { IMDB } from './../../models/IMDB';
 
 @Component({
   selector: 'app-movie-search',
   templateUrl: './movie-search.component.html'
 })
 export class MovieSearchComponent implements OnInit {
-  movies$: Observable<IMDB[]>;
+  movies$!: Observable<IMDB[]>;
   private searchTerms = new Subject<string>();
 
   constructor() {}

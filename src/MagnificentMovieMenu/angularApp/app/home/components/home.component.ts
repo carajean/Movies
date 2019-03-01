@@ -9,7 +9,7 @@ import { List } from './../../models/list';
 })
 export class HomeComponent implements OnInit {
   message: string;
-  nextNum: number;
+  nextNum!: number;
   lists: List[] = [];
   list: List = new List();
 

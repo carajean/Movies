@@ -9,25 +9,22 @@ import { Movie } from './../../models/movie';
   templateUrl: './category.component.html'
 })
 export class CategoryComponent implements OnInit {
-  message: string;
-  nextNum: number;
-  category: string;
+  nextNum!: number;
+  category!: string;
   movies: Movie[] = [];
   slugs: Movie[] = [];
   movie: Movie = new Movie();
-  sort: number;
+  sort!: number;
 
   constructor(
     private dataService: MovieService,
     private route: ActivatedRoute
-  ) {
-    this.message = this.category;
-  }
+  ) {}
 
   ngOnInit() {
     this.getMoviesByCategory();
     this.nextNum = 0;
-    this.category = this.route.snapshot.paramMap.get('name');
+    this.category = this.route.snapshot.paramMap.get('name') || '';
     if (this.category === 'all') {
       this.category = 'All Movies';
       this.getAllMovies();

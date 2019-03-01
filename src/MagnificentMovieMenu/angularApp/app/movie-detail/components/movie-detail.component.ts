@@ -14,11 +14,11 @@ import { IMDB } from './../../models/IMDB';
 })
 export class MovieDetailComponent implements OnInit {
   message: string;
-  nextNum: number;
-  slug: string;
+  nextNum!: number;
+  slug!: string;
   movies: Movie[] = [];
-  movie: Movie;
-  selectedMovie: IMDB;
+  movie!: Movie;
+  selectedMovie!: IMDB;
 
   constructor(
     private dataService: MovieService,
@@ -30,7 +30,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.slug = this.route.snapshot.paramMap.get(`slug`);
+    this.slug = this.route.snapshot.paramMap.get(`slug`) || '';
     this.getMovie();
     this.nextNum = 0;
   }
