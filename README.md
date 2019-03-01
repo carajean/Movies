@@ -2,8 +2,8 @@
 
 **Take-Home Project by Carolyn Campbell**
 
-![About View](https://github.com/carajean/src/MagnificentMovieMenu/angularApp/images/AboutView.jpg 'About View')
-![Home View](https://github.com/carajean/src/MagnificentMovieMenu/angularApp/images/HomeView.jpg 'Home View')
+![About View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/AboutView.jpg 'About View')
+![Home View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/HomeView.jpg 'Home View')
 
 ## Features
 
@@ -21,6 +21,6 @@
 - [x] backend: uses C# ASP.Net Core, making C# Web API REST endpoints
 - [x] database: use MS SQL or MySQL
 
-![Category View](https://github.com/carajean/src/MagnificentMovieMenu/angularApp/images/CategoryView.jpg 'Category')
-![Add Category View](https://github.com/carajean/src/MagnificentMovieMenu/angularApp/images/AddCategoryView.jpg 'Add Category')
-![Movie Detail View](https://github.com/carajean/src/MagnificentMovieMenu/angularApp/images/MovieDetail.jpg 'Movie Detail')
+![Category View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/CategoryView.jpg 'Category')
+![Add Category View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/AddCategoryView.jpg 'Add Category')
+![Movie Detail View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/MovieDetail.jpg 'Movie Detail')
