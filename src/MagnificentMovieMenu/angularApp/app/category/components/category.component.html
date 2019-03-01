@@ -1,4 +1,6 @@
-﻿<form #movieForm="ngForm" (ngSubmit)="addMovie()">
+﻿<h3>{{this.category}}</h3>
+<br />
+<form #movieForm="ngForm" (ngSubmit)="addMovie()">
     <div class="row">
         <div class="col-6">
             <div class="input-group">
@@ -19,7 +21,7 @@
             <thead>
             <tr>
                 <th>Year</th>
-                <th>Menu: {{this.category}}</th>
+                <th>Movie</th>
                 <th class="text-right">&nbsp;</th>
             </tr>
             </thead>
@@ -30,7 +32,7 @@
                     <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
                 </td>
                 <td class="text-right">
-                    <button (click)="deleteMovie(movie)" class="btn btn-danger btn-sm" type="button">X</button>
+                    <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
                 </td>
             </tr>
             </tbody>
@@ -44,7 +46,7 @@
             <thead>
                 <tr>
                     <th>Year</th>
-                    <th>Menu: {{this.category}}</th>
+                    <th>Movie</th>
                     <th class="text-right">&nbsp;</th>
                 </tr>
             </thead>

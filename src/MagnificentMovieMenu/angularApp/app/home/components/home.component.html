@@ -17,12 +17,10 @@
     <div *ngFor="let list of lists" class="col-1-4">
         <a routerLink="/menu/{{list.name}}">
             <div class="module list">
-                <h4>
-                    {{list.name}}
-                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm delListBtn" type="button">X</button>
-                </h4>
+                <h3>{{list.name}}</h3>
             </div>
         </a>
+        <button (click)="deleteList(list)" class="btn btn-danger btn-sm delListBtn" type="button">X</button>
     </div>
 </div>
 

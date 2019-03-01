@@ -1,8 +1,6 @@
 <div *ngIf="movie">
 
-  <h4>Movie Details</h4>
-  <div><span>Rating: </span>{{this.movie.rating}}</div>
-  <div><span>Title: </span>{{this.movie.name}}</div>
+  <h3>{{this.movie.name}}</h3>
   <div><span>Release Year: </span>{{this.movie.year}}</div>
   <div><span>Category: </span>{{this.movie.category}}</div>
   <button (click)="goBack()">Back</button>

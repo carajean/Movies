@@ -1,22 +1,71 @@
+h1,
+h2,
+h3 {
+  font-family: 'Nova Slim', cursive;
+}
+
+p,
+a {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 a {
   color: #03a9f4;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+button {
+  transition: 0.4s;
+}
+
+.nav {
+  background-color: rgb(15, 38, 53) !important;
+}
+
+#title {
+  display: inline;
+  position: relative;
+  top: 3px;
+  color: rgb(177, 230, 255);
+  padding-left: 5px;
+}
+
+.nav-link {
+  font-size: 14pt;
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: #f5f5f5 !important;
 }
 
 .listDiv {
   overflow: hidden;
 }
 
+.delListBtn,
+.delMovieBtn {
+  float: right;
+  padding: 5px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  background-color: rgb(190, 57, 24);
+}
+
+.delListBtn:hover,
+.delMovieBtn:hover {
+  background-color: rgb(153, 19, 19);
+}
+
 .delListBtn {
-    float: right;
-    padding: 5px;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    margin-right: 20px;
+  position: relative;
+  left: 30px;
+  bottom: 115px;
 }
 
 .navImg {
@@ -57,21 +106,22 @@ h4 {
   width: 25%;
 }
 .module {
+  margin: 20px;
   height: 100px;
   padding: 15% 0px;
   line-height: 90px;
   text-align: center;
-  color: #eee;
+  color: rgb(184, 184, 184);
   max-height: 120px;
   min-width: 120px;
-  background-color: #607d8b;
+  background-color: #6a5d8f;
   border-radius: 50px;
-  transition: .4s;
+  transition: 0.4s;
 }
 .module:hover {
-  background-color: #eee;
+  background-color: rgb(61, 41, 116);
   cursor: pointer;
-  color: #607d8b;
+  color: #f5f5f5;
 }
 .grid-pad {
   padding: 10px 0;
