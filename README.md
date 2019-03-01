@@ -2,6 +2,13 @@
 
 **Take-Home Project by Carolyn Campbell**
 
+To run:
+
+- `npm install`
+- navigate to program folder: `cd src/MagnificentMovieMenu`
+- `npm run start`
+- Enjoy!
+
 ![About View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/AboutView.jpg 'About View')
 ![Home View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/HomeView.jpg 'Home View')
 
