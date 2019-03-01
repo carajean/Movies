@@ -4,4 +4,5 @@
   year = 0;
   category = '';
   rating = 0;
+  slug = '';
 }

@@ -24,13 +24,22 @@ export class MovieService {
     this.http
       .get<Movie[]>(this.actionUrl, { headers: this.headers })
       .subscribe(result => {
+        result.forEach(m => (m.slug = m.name.split(' ').join('')));
         this.num = result ? result[result.length - 1].id + 1 : 1;
       });
     return this.http.get<Movie[]>(this.actionUrl, { headers: this.headers });
   }
 
-  getSingle(id: number): Observable<Movie> {
-    return this.http.get<Movie>(this.actionUrl + id, { headers: this.headers });
+  addSlug(id: number, slug: string): Observable<Movie> {
+    return this.http.put<Movie>(this.actionUrl + id, JSON.stringify({ slug }), {
+      headers: this.headers
+    });
+  }
+
+  getSingle(slug: string): Observable<Movie> {
+    return this.http.get<Movie>(this.actionUrl + slug, {
+      headers: this.headers
+    });
   }
 
   add(movieToAdd: Movie): Observable<Movie> {

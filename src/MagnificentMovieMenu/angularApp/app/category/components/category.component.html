@@ -27,7 +27,7 @@
             <tr *ngFor="let movie of movies; let i = index">
                 <td>{{movie.year}}</td>
                 <td>
-                    <a routerLink="/movie/{{movie.name}}">{{movie.name}}</a>
+                    <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
                 </td>
                 <td class="text-right">
                     <button (click)="deleteMovie(movie)" class="btn btn-danger btn-sm" type="button">X</button>

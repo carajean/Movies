@@ -24,9 +24,17 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.getMoviesByCategory();
+    this.getSlugs();
     this.nextNum = 0;
     this.category = this.route.snapshot.paramMap.get('name');
     console.log(`Now viewing category: ${this.category}`);
+  }
+
+  private getSlugs() {
+    this.movies.forEach(m => {
+      const slug = m.name.split(' ').join('');
+      this.dataService.update(m.id, { slug });
+    });
   }
 
   addMovie() {
@@ -59,6 +67,7 @@ export class CategoryComponent implements OnInit {
       .subscribe(
         data => (
           (this.movies = data.filter(m => m.category === this.category)),
+          this.movies.forEach(m => (m.slug = m.name.split(' ').join(''))),
           (this.nextNum = data.length)
         ),
         error => console.log(error),
