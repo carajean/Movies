@@ -13,10 +13,9 @@ export class MovieService {
 
   constructor(private http: HttpClient, configuration: Configuration) {
     this.actionUrl = configuration.Server + 'api/movies/';
-    this.headers = new HttpHeaders();
-    this.headers = this.headers.set('Content-Type', 'application/json');
+    this.headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
     this.headers = this.headers.set('Accept', 'application/json');
-    this.headers = this.headers.set('Access-Control-Allow-Origin', '*');
+    this.headers = this.headers.set('Content-Type', 'application/json');
     this.num = 0;
   }
 
@@ -28,12 +27,6 @@ export class MovieService {
         this.num = result ? result[result.length - 1].id + 1 : 1;
       });
     return this.http.get<Movie[]>(this.actionUrl, { headers: this.headers });
-  }
-
-  addSlug(id: number, slug: string): Observable<Movie> {
-    return this.http.put<Movie>(this.actionUrl + id, JSON.stringify({ slug }), {
-      headers: this.headers
-    });
   }
 
   getSingle(slug: string): Observable<Movie> {
@@ -54,7 +47,9 @@ export class MovieService {
     return this.http.put<Movie>(
       this.actionUrl + id,
       JSON.stringify(itemToUpdate),
-      { headers: this.headers }
+      {
+        headers: this.headers
+      }
     );
   }
 

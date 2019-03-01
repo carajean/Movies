@@ -25,6 +25,8 @@ namespace MagnificentMovieMenu.Controllers
 
     // GET: api/movie
     [HttpGet]
+    [EnableCors("AllowAll")]
+
     public IEnumerable<Movie> GetMovies()
     {
       return db.Movie;
@@ -32,6 +34,8 @@ namespace MagnificentMovieMenu.Controllers
 
     // GET api/movie/:slug
     [HttpGet("{slug}")]
+    [EnableCors("AllowAll")]
+
     public string Get(string slug)
     {
       var movie = db.Movie.First(m => m.Slug == slug);
@@ -40,6 +44,7 @@ namespace MagnificentMovieMenu.Controllers
 
     // POST api/movie
     [HttpPost]
+    [EnableCors("AllowAll")]
     public void Post([FromBody]JObject value)
     {
       Movie posted = value.ToObject<Movie>();
@@ -51,6 +56,8 @@ namespace MagnificentMovieMenu.Controllers
 
     // PUT api/movie/:id
     [HttpPut("{id}")]
+    [EnableCors("AllowAll")]
+
     public void Put(int id, [FromBody]JObject value)
     {
       Movie posted = value.ToObject<Movie>();
@@ -63,6 +70,8 @@ namespace MagnificentMovieMenu.Controllers
 
     // DELETE api/movie/5
     [HttpDelete("{id}")]
+    [EnableCors("AllowAll")]
+
     public void Delete(int id)
     {
       {
@@ -73,39 +82,3 @@ namespace MagnificentMovieMenu.Controllers
     }
   }
 }
-
-//[Route("api/[controller]")]
-//public class MoviesController : Controller
-//{
-//    // GET: api/values
-//    [HttpGet]
-//    public IEnumerable<string> Get()
-//    {
-//        return new string[] { "value1", "value2" };
-//    }
-
-//    // GET api/values/5
-//    [HttpGet("{id}")]
-//    public string Get(int id)
-//    {
-//        return "value";
-//    }
-
-//    // POST api/values
-//    [HttpPost]
-//    public void Post([FromBody]string value)
-//    {
-//    }
-
-//    // PUT api/values/5
-//    [HttpPut("{id}")]
-//    public void Put(int id, [FromBody]string value)
-//    {
-//    }
-
-//    // DELETE api/values/5
-//    [HttpDelete("{id}")]
-//    public void Delete(int id)
-//    {
-//    }
-//}

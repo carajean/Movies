@@ -25,9 +25,9 @@ export class MovieDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = this.route.snapshot.paramMap.get(`slug`);
     this.getMovie();
     this.nextNum = 0;
-    this.title = this.route.snapshot.paramMap.get('name');
     console.log(`Now viewing movie: ${this.title}`);
   }
 
@@ -57,14 +57,11 @@ export class MovieDetailComponent implements OnInit {
 
   private getMovie() {
     this.dataService
-      .getAll()
+      .getSingle(this.title)
       .subscribe(
-        data => (
-          (this.movies = data.filter(m => m.name === this.title)),
-          (this.nextNum = data.length)
-        ),
+        data => this.movies.push(data),
         error => console.log(error),
-        () => console.log(`Movie saved: ${this.title}`)
+        () => console.log(`Movie: ${this.title}`)
       );
   }
 
