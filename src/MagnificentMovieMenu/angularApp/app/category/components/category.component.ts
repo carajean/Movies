@@ -28,13 +28,16 @@ export class CategoryComponent implements OnInit {
     this.getMoviesByCategory();
     this.nextNum = 0;
     this.category = this.route.snapshot.paramMap.get('name');
-    console.log(`Now viewing category: ${this.category}`);
+    if (this.category === 'all') {
+      this.category = 'All Movies';
+      this.getAllMovies();
+    }
   }
 
   addMovie() {
     this.movie.id = this.nextNum;
     this.movie.category = this.category;
-
+    this.movie.year = 2019;
     this.dataService.add(this.movie).subscribe(
       () => {
         this.getMoviesByCategory();
@@ -57,13 +60,36 @@ export class CategoryComponent implements OnInit {
     );
   }
 
+  private getAllMovies() {
+    this.dataService.getAll().subscribe(
+      data => (
+        (this.movies = data),
+        this.movies.forEach(m => {
+          m.slug = m.name.split(' ').join('');
+          this.dataService
+            .update(m.id, {
+              name: m.name,
+              year: m.year,
+              category: m.category,
+              slug: m.slug
+            })
+            .subscribe(slugM => {
+              this.slugs.push(slugM as Movie);
+            });
+        }),
+        (this.nextNum = this.movies.length)
+      ),
+      error => console.log(error)
+    );
+    this.movies = this.slugs;
+  }
+
   private getMoviesByCategory() {
     this.dataService.getAll().subscribe(
       data => (
         (this.movies = data.filter(m => m.category === this.category)),
         this.movies.forEach(m => {
           m.slug = m.name.split(' ').join('');
-          console.log(m.slug);
           this.dataService
             .update(m.id, {
               name: m.name,

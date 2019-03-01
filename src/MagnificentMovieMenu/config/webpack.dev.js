@@ -14,8 +14,6 @@ const helpers = require('./webpack.helpers');
 const ROOT = path.resolve(__dirname, '..');
 const chromeUserDataDir = ROOT;
 
-console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
-
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
@@ -96,10 +94,6 @@ module.exports = {
   plugins: [
     function() {
       this.plugin('watch-run', function(watching, callback) {
-        console.log(
-          '\x1b[33m%s\x1b[0m',
-          `Begin compile at ${new Date().toTimeString()}`
-        );
         callback();
       });
     },

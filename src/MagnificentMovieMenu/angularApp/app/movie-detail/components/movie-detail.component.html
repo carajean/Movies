@@ -1,9 +1,12 @@
-<div *ngIf="movie">
-
-  <h3>{{this.movie.name}}</h3>
+<div id="movieDetailDiv" *ngIf="movie" class="jumbotron">
+  <h3 class="movieName">{{this.movie.name}}</h3>
   <div><span>Release Year: </span>{{this.movie.year}}</div>
   <div><span>Category: </span>{{this.movie.category}}</div>
   <button (click)="goBack()">Back</button>
   <button (click)="rate()">Rate Movie</button>
-
+</div>
+<br>
+<br>
+<div id="centerMe">
+  <img class="redTixImg" src="assets/redTix.png">
 </div>

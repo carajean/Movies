@@ -1,6 +1,7 @@
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: 'Nova Slim', cursive;
 }
 
@@ -19,10 +20,47 @@ a:hover {
 
 button {
   transition: 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.redTixImg {
+  margin: auto;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+}
+
+#centerMe {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#movieDetailDiv {
+  width: 500px;
+}
+
+#movieDetailDiv > * {
+  padding: 5px;
+}
+
+#aboutDiv,
+#movieDetailDiv {
+  border-radius: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+}
+
+#aboutTitle,
+.movieName {
+  color: rgb(77, 1, 107) !important;
+  text-align: center;
+  font-size: 2em;
 }
 
 .nav {
   background-color: rgb(15, 38, 53) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #title {
@@ -74,20 +112,12 @@ button {
   margin: 5px;
 }
 
-#redTix {
-  height: 100px;
-  width: 100px;
-  position: fixed;
-  bottom: 55%;
-  right: 20%;
-}
-
 .inputField {
   margin: auto;
 }
 
 .categoryName {
-  color: rgb(70, 1, 97) !important;
+  color: rgb(77, 1, 107) !important;
 }
 
 [class*='col-'] {
@@ -133,6 +163,7 @@ h4 {
   background-color: #6a5d8f;
   border-radius: 50px;
   transition: 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .module:hover {
   background-color: rgb(61, 41, 116);

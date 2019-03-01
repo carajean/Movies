@@ -41,9 +41,11 @@ export class MovieService {
       this.language
     }&query=${term}`;
 
+    // return this.imdbHttp.get(searchUrl);
+
     return this.imdbHttp.get(searchUrl).subscribe(res => {
       console.log('RESULTS: ', res.json().results[0].title);
-      res.json().results[0];
+      res.json();
     });
   }
 

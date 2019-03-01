@@ -15,8 +15,6 @@ const browserPlugin = require('webpack-browser-plugin');
 const ROOT = path.resolve(__dirname, '..');
 const chromeUserDataDir = ROOT;
 
-console.log('@@@@@@@@@ USING PRODUCTION @@@@@@@@@@@@@@@');
-
 module.exports = {
   mode: 'production',
   entry: {

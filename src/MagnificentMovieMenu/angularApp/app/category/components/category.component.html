@@ -1,6 +1,6 @@
 ﻿<h3 class="categoryName">{{this.category}}</h3>
 <br />
-<form class="inputField" #movieForm="ngForm" (ngSubmit)="addMovie()">
+<form *ngIf="this.category !== 'All Movies'" class="mt-4 row" class="inputField" #movieForm="ngForm" (ngSubmit)="addMovie()">
     <div class="row justify-content-md-center">
         <div class="col-5">
             <div class="input-group">
@@ -22,6 +22,7 @@
             <tr>
                 <th>Year</th>
                 <th>Movie</th>
+                <th>Category</th>
                 <th class="text-right">&nbsp;</th>
             </tr>
             </thead>
@@ -31,6 +32,7 @@
                 <td>
                     <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
                 </td>
+                <td>{{movie.category}}</td>
                 <td class="text-right">
                     <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
                 </td>
@@ -58,5 +60,3 @@
         </div>
     </div>
 </div>
-
-<img id="redTix" src="assets/redTix.png" />
