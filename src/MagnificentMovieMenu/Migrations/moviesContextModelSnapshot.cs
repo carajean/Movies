@@ -48,6 +48,10 @@ namespace MagnificentMovieMenu.Migrations
                     b.Property<int?>("Rating")
                         .HasColumnType("int(11)");
 
+                    b.Property<string>("Slug")
+                        .HasMaxLength(45)
+                        .IsUnicode(false);
+
                     b.Property<int?>("Year")
                         .HasColumnType("int(11)");
 

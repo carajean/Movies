@@ -7,22 +7,21 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CategoryModule } from './category/category.module';
+import { MovieDetailModule } from './movie-detail/movie-detail.module';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        AppRoutes,
-        SharedModule,
-        CoreModule.forRoot(),
-        HomeModule,
-        CategoryModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutes,
+    SharedModule,
+    CoreModule.forRoot(),
+    HomeModule,
+    CategoryModule,
+    MovieDetailModule
+  ],
 
-    declarations: [
-        AppComponent
-    ],
+  declarations: [AppComponent],
 
-    bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {}

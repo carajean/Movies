@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagnificentMovieMenu.Migrations
 {
     [DbContext(typeof(moviesContext))]
-    [Migration("20190228231405_InitialMigration")]
+    [Migration("20190301034022_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,10 @@ namespace MagnificentMovieMenu.Migrations
 
                     b.Property<int?>("Rating")
                         .HasColumnType("int(11)");
+
+                    b.Property<string>("Slug")
+                        .HasMaxLength(45)
+                        .IsUnicode(false);
 
                     b.Property<int?>("Year")
                         .HasColumnType("int(11)");

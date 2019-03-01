@@ -22,7 +22,6 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=Rileyroo1988;database=movies");
             }
         }
@@ -63,6 +62,10 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
                     .IsUnicode(false);
 
                 entity.Property(e => e.Rating).HasColumnType("int(11)");
+
+                entity.Property(e => e.Slug)
+                    .HasMaxLength(45)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Year).HasColumnType("int(11)");
             });

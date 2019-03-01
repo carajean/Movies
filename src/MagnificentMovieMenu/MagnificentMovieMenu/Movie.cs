@@ -10,5 +10,6 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
         public int? Year { get; set; }
         public string Category { get; set; }
         public int? Rating { get; set; }
+        public string Slug { get; set; }
     }
 }

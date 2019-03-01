@@ -31,7 +31,8 @@ namespace MagnificentMovieMenu.Migrations
                     Name = table.Column<string>(unicode: false, maxLength: 45, nullable: false),
                     Year = table.Column<int>(type: "int(11)", nullable: true),
                     Category = table.Column<string>(unicode: false, maxLength: 45, nullable: true),
-                    Rating = table.Column<int>(type: "int(11)", nullable: true)
+                    Rating = table.Column<int>(type: "int(11)", nullable: true),
+                    Slug = table.Column<string>(unicode: false, maxLength: 45, nullable: true)
                 },
                 constraints: table =>
                 {
