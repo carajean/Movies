@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MagnificentMovieMenu.Repositories.Things;
-//using MagnificentMovieMenu.movies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using MagnificentMovieMenu.MagnificentMovieMenu;
 
 namespace MagnificentMovieMenu
 {
@@ -30,8 +30,8 @@ namespace MagnificentMovieMenu
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      //services.AddDbContext<moviesContext>(options =>
-              //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<moviesContext>(options =>
+              options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
       
       services.AddCors(options =>
       {

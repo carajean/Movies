@@ -11,7 +11,7 @@
                 <input [(ngModel)]="list.name" class="form-control" id="exampleInputList" name="list" placeholder="Name of the list ..." required
                        type="text">
                 <span class="input-group-btn">
-                    <button [disabled]="!listForm.valid" class="btn btn-primary" type="submit">Create new List</button>
+                    <button [disabled]="!listForm.valid" class="btn btn-primary" type="submit">Create new Menu</button>
                 </span>
             </div>
         </div>
@@ -23,14 +23,14 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Category</th>
                 <th class="text-right">&nbsp;</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let list of lists; let i = index">
                 <td>{{i + 1}}</td>
-                <td>{{list.list1}}</td>
+                <td>{{list.name}}</td>
                 <td class="text-right">
                     <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">Delete</button>
                 </td>
@@ -42,7 +42,7 @@
 <div *ngIf="lists.length <= 0" class="mt-4 row">
     <div class="col-12">
         <div class="alert alert-warning">
-            No items found
+            No movie menus found
         </div>
     </div>
 </div>

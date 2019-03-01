@@ -9,21 +9,24 @@ import { List } from './../../models/list';
 })
 export class HomeComponent implements OnInit {
   message: string;
+  nextNum: number;
   lists: List[] = [];
   list: List = new List();
 
   constructor(private dataService: ListService) {
-    this.message = 'Lists from the ASP.NET Core API';
+      this.message = 'Magnificent Movie Menu';
   }
 
   ngOnInit() {
-    this.getAllLists();
+      this.getAllLists();
+      this.nextNum = 0;
   }
 
   addList() {
     this.dataService.add(this.list).subscribe(
       () => {
         this.getAllLists();
+        this.list.id = this.nextNum;
         this.list = new List();
       },
       error => {
@@ -47,9 +50,9 @@ export class HomeComponent implements OnInit {
     this.dataService
       .getAll()
       .subscribe(
-        data => (this.lists = data),
+        data => (this.lists = data, this.nextNum = data.length),
         error => console.log(error),
-        () => console.log('Get all complete')
+        () => console.log(`List saved of ${this.nextNum} items`)
       );
   }
 }
