@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
@@ -17,7 +18,8 @@ import { MovieDetailModule } from './movie-detail/movie-detail.module';
     CoreModule.forRoot(),
     HomeModule,
     CategoryModule,
-    MovieDetailModule
+    MovieDetailModule,
+    HttpModule
   ],
 
   declarations: [AppComponent],

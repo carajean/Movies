@@ -51,8 +51,7 @@ export class HomeComponent implements OnInit {
       .getAll()
       .subscribe(
         data => ((this.lists = data), (this.nextNum = data.length)),
-        error => console.log(error),
-        () => console.log(`List saved of ${this.nextNum} items`)
+        error => console.log(error)
       );
   }
 }

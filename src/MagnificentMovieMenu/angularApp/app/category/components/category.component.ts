@@ -15,6 +15,7 @@ export class CategoryComponent implements OnInit {
   movies: Movie[] = [];
   slugs: Movie[] = [];
   movie: Movie = new Movie();
+  sort: number;
 
   constructor(
     private dataService: MovieService,
@@ -25,17 +26,18 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.getMoviesByCategory();
-    // this.getSlugs();
     this.nextNum = 0;
     this.category = this.route.snapshot.paramMap.get('name');
     console.log(`Now viewing category: ${this.category}`);
   }
 
   addMovie() {
+    this.movie.id = this.nextNum;
+    this.movie.category = this.category;
+
     this.dataService.add(this.movie).subscribe(
       () => {
         this.getMoviesByCategory();
-        this.movie.id = this.nextNum;
         this.movie = new Movie();
       },
       error => {
@@ -75,8 +77,7 @@ export class CategoryComponent implements OnInit {
         }),
         (this.nextNum = this.movies.length)
       ),
-      error => console.log(error),
-      () => console.log(`Category saved with ${this.nextNum} movies`)
+      error => console.log(error)
     );
     this.movies = this.slugs;
   }

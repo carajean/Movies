@@ -5,22 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { CategoryComponent } from './components/category.component';
 import { CategoryRoutes } from './category.routes';
+import { MovieSearchComponent } from '../movie-search/components/movie-search.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        HttpClientModule,
-        CategoryRoutes
-    ],
+  imports: [CommonModule, FormsModule, HttpClientModule, CategoryRoutes],
 
-    declarations: [
-        CategoryComponent
-    ],
+  declarations: [CategoryComponent, MovieSearchComponent],
 
-    exports: [
-        CategoryComponent
-    ]
+  exports: [CategoryComponent, MovieSearchComponent]
 })
-
-export class CategoryModule { }
+export class CategoryModule {}

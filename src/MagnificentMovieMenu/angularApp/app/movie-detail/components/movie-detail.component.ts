@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
 
 import { MovieService } from './../../core/services/movie-data.service';
+import { IMDBService } from './../../core/services/imdb.service';
 import { Movie } from './../../models/movie';
+import { IMDB } from './../../models/IMDB';
 
 @Component({
   selector: 'app-movie-detail',
@@ -15,9 +18,11 @@ export class MovieDetailComponent implements OnInit {
   slug: string;
   movies: Movie[] = [];
   movie: Movie;
+  selectedMovie: IMDB;
 
   constructor(
     private dataService: MovieService,
+    private imdbService: IMDBService,
     private route: ActivatedRoute,
     private location: Location
   ) {
@@ -29,6 +34,10 @@ export class MovieDetailComponent implements OnInit {
     this.getMovie();
     this.nextNum = 0;
     console.log(`Now viewing movie: ${this.slug}`);
+  }
+
+  searchMovie(query: string) {
+    return this.imdbService.searchMovies(query);
   }
 
   addMovie() {
