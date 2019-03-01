@@ -21,7 +21,8 @@ export class ListService {
   }
 
   getAll(): Observable<List[]> {
-      this.http.get<List[]>(this.actionUrl, { headers: this.headers }).subscribe(result => {this.num = result.length});
+      this.http.get<List[]>(this.actionUrl, { headers: this.headers })
+          .subscribe(result => { this.num = result ? result[result.length - 1].id + 1 : 1; });
       return this.http.get<List[]>(this.actionUrl, { headers: this.headers });
   }
 

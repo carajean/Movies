@@ -14,12 +14,12 @@ export class HomeComponent implements OnInit {
   list: List = new List();
 
   constructor(private dataService: ListService) {
-      this.message = 'Magnificent Movie Menu';
+    this.message = 'Magnificent Movie Menu';
   }
 
   ngOnInit() {
-      this.getAllLists();
-      this.nextNum = 0;
+    this.getAllLists();
+    this.nextNum = 0;
   }
 
   addList() {
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
     this.dataService
       .getAll()
       .subscribe(
-        data => (this.lists = data, this.nextNum = data.length),
+        data => ((this.lists = data), (this.nextNum = data.length)),
         error => console.log(error),
         () => console.log(`List saved of ${this.nextNum} items`)
       );

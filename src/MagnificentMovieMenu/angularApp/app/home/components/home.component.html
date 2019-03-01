@@ -1,24 +1,19 @@
-﻿<div class="jumbotron">
-    <h1 class="display-4">
-        {{message}}
-    </h1>
-</div>
-<form #listForm="ngForm" (ngSubmit)="addList()">
+﻿<form #listForm="ngForm" (ngSubmit)="addList()">
     <div class="row">
         <div class="col-6">
             <div class="input-group">
                 <label class="sr-only" for="exampleInputList">List</label>
-                <input [(ngModel)]="list.name" class="form-control" id="exampleInputList" name="list" placeholder="Name of the list ..." required
+                <input [(ngModel)]="list.name" class="form-control" id="exampleInputList" name="list" placeholder="Add a category!" required
                        type="text">
                 <span class="input-group-btn">
-                    <button [disabled]="!listForm.valid" class="btn btn-primary" type="submit">Create new Menu</button>
+                    <button [disabled]="!listForm.valid" class="btn btn-primary" type="submit">Submit</button>
                 </span>
             </div>
         </div>
     </div>
 </form>
 <div *ngIf="lists.length > 0" class="mt-4 row">
-    <div class="col-12 table-responsive">
+    <div class="col-12 table-responsive listDiv">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -32,7 +27,7 @@
                 <td>{{i + 1}}</td>
                 <td>{{list.name}}</td>
                 <td class="text-right">
-                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">Delete</button>
+                    <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">X</button>
                 </td>
             </tr>
             </tbody>
@@ -42,7 +37,7 @@
 <div *ngIf="lists.length <= 0" class="mt-4 row">
     <div class="col-12">
         <div class="alert alert-warning">
-            No movie menus found
+            You don't have any movie menus yet!
         </div>
     </div>
 </div>
