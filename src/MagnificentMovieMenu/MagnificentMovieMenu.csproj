@@ -18,4 +18,8 @@
     <Compile Remove="movies\Movie.cs" />
     <Compile Remove="movies\moviesContext.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="angularApp\app\category\" />
+    <Folder Include="angularApp\app\category\components\" />
+  </ItemGroup>
 </Project>

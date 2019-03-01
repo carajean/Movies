@@ -6,6 +6,7 @@ import { AppRoutes } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { CategoryModule } from './category/category.module';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { SharedModule } from './shared/shared.module';
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),
-        HomeModule
+        HomeModule,
+        CategoryModule
     ],
 
     declarations: [

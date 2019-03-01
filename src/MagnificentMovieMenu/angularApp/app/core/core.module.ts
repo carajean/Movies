@@ -4,23 +4,16 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Configuration } from '../app.constants';
 import { ThingService } from './services/thing-data.service';
 import { ListService } from './services/list-data.service';
-
+import { MovieService } from './services/movie-data.service';
 
 @NgModule({
-    imports: [
-        CommonModule
-    ]
+  imports: [CommonModule]
 })
-
 export class CoreModule {
-    static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: CoreModule,
-            providers: [
-                ThingService,
-                ListService,
-                Configuration
-            ]
-        };
-    }
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [ThingService, ListService, MovieService, Configuration]
+    };
+  }
 }

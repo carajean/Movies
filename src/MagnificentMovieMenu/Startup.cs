@@ -32,18 +32,18 @@ namespace MagnificentMovieMenu
     {
       services.AddDbContext<moviesContext>(options =>
               options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-      
+
       services.AddCors(options =>
       {
         options.AddPolicy("AllowAll",
         builder =>
         {
-            builder
-              .AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
-         });
+          builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+        });
       });
 
       // Add framework services.
@@ -55,7 +55,7 @@ namespace MagnificentMovieMenu
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
       var angularRoutes = new[] {
-                 "/home",
+                 "/menu",
                  "/about"
              };
 

@@ -25,7 +25,11 @@
             <tbody>
             <tr *ngFor="let list of lists; let i = index">
                 <td>{{i + 1}}</td>
-                <td>{{list.name}}</td>
+                <td>
+                    <a routerLink="/menu/{{list.name}}" >
+                        {{list.name}}
+                    </a>
+                </td>
                 <td class="text-right">
                     <button (click)="deleteList(list)" class="btn btn-danger btn-sm" type="button">X</button>
                 </td>
