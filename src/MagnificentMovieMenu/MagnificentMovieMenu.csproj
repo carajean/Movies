@@ -22,4 +22,8 @@
     <Folder Include="angularApp\app\category\" />
     <Folder Include="angularApp\app\category\components\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\dist\app.27ed4c60f6c178a54328.bundle.js" />
+    <Content Remove="wwwroot\dist\3.27ed4c60f6c178a54328.chunk.js" />
+  </ItemGroup>
 </Project>

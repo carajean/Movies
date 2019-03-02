@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MagnificentMovieMenu.MagnificentMovieMenu
+namespace MagnificentMovieMenu.azureDB
 {
     public partial class moviesContext : DbContext
     {
@@ -22,7 +22,7 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=Rileyroo1988;database=movies");
+                optionsBuilder.UseMySQL("server=moviemenuserver.mysql.database.azure.com;port=3306;user=adminLogin@moviemenuserver;password=Rileyroo1988;database=movies");
             }
         }
 
@@ -32,7 +32,7 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
 
             modelBuilder.Entity<List>(entity =>
             {
-                entity.ToTable("List", "movies");
+                entity.ToTable("list", "movies");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -46,7 +46,7 @@ namespace MagnificentMovieMenu.MagnificentMovieMenu
 
             modelBuilder.Entity<Movie>(entity =>
             {
-                entity.ToTable("Movie", "movies");
+                entity.ToTable("movie", "movies");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")

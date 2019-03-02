@@ -10,7 +10,7 @@ namespace MagnificentMovieMenu.Migrations
                 name: "movies");
 
             migrationBuilder.CreateTable(
-                name: "List",
+                name: "list",
                 schema: "movies",
                 columns: table => new
                 {
@@ -19,11 +19,11 @@ namespace MagnificentMovieMenu.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_List", x => x.Id);
+                    table.PrimaryKey("PK_list", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Movie",
+                name: "movie",
                 schema: "movies",
                 columns: table => new
                 {
@@ -36,18 +36,18 @@ namespace MagnificentMovieMenu.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movie", x => x.Id);
+                    table.PrimaryKey("PK_movie", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "List",
+                name: "list",
                 schema: "movies");
 
             migrationBuilder.DropTable(
-                name: "Movie",
+                name: "movie",
                 schema: "movies");
         }
     }

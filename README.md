@@ -2,6 +2,16 @@
 
 **Take-Home Project by Carolyn Campbell**
 
+To run:
+
+- `npm install`
+- navigate to program folder: `cd src/MagnificentMovieMenu`
+- `npm run start`
+- Enjoy!
+
+![About View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/AboutView.jpg 'About View')
+![Home View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/HomeView.jpg 'Home View')
+
 ## Features
 
 - [x] view all lists
@@ -17,3 +27,7 @@
 - [x] all JS/Angular uses TypeScript
 - [x] backend: uses C# ASP.Net Core, making C# Web API REST endpoints
 - [x] database: use MS SQL or MySQL
+
+![Category View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/CategoryView.jpg 'Category')
+![Add Category View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/AddCategoryView.jpg 'Add Category')
+![Movie Detail View](https://raw.githubusercontent.com/carajean/Movies/master/src/MagnificentMovieMenu/angularApp/images/MovieDetail.jpg 'Movie Detail')

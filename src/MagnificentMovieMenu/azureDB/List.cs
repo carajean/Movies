@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MagnificentMovieMenu.MagnificentMovieMenu
+namespace MagnificentMovieMenu.azureDB
 {
     public partial class List
     {
