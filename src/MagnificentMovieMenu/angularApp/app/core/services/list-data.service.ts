@@ -8,22 +8,25 @@ import { List } from './../../models/list';
 @Injectable()
 export class ListService {
   private actionUrl: string;
-    private headers: HttpHeaders;
-    private num: number;
+  private headers: HttpHeaders;
+  private num: number;
 
   constructor(private http: HttpClient, configuration: Configuration) {
-    this.actionUrl = configuration.Server + 'api/lists/';
+    this.actionUrl = configuration.Server + 'api/list/';
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json');
     this.headers = this.headers.set('Accept', 'application/json');
-      this.headers = this.headers.set('Access-Control-Allow-Origin', '*');
-      this.num = 0;
+    this.headers = this.headers.set('Access-Control-Allow-Origin', '*');
+    this.num = 0;
   }
 
   getAll(): Observable<List[]> {
-      this.http.get<List[]>(this.actionUrl, { headers: this.headers })
-          .subscribe(result => { this.num = result ? result[result.length - 1].id + 1 : 1; });
-      return this.http.get<List[]>(this.actionUrl, { headers: this.headers });
+    this.http
+      .get<List[]>(this.actionUrl, { headers: this.headers })
+      .subscribe(result => {
+        this.num = result ? result[result.length - 1].id + 1 : 1;
+      });
+    return this.http.get<List[]>(this.actionUrl, { headers: this.headers });
   }
 
   getSingle(id: number): Observable<List> {
@@ -31,7 +34,7 @@ export class ListService {
   }
 
   add(listToAdd: List): Observable<List> {
-      const toAdd = JSON.stringify({ id: this.num, name: listToAdd.name });
+    const toAdd = JSON.stringify({ id: this.num, name: listToAdd.name });
 
     return this.http.post<List>(this.actionUrl, toAdd, {
       headers: this.headers
