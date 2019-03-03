@@ -28,28 +28,35 @@ export class MovieDetailComponent implements OnInit {
     private location: Location
   ) {
     this.message = this.slug;
+    this.slug = this.route.snapshot.paramMap.get(`slug`) || '';
+    this.nextNum = 0;
   }
 
   ngOnInit() {
-    this.slug = this.route.snapshot.paramMap.get(`slug`) || '';
     this.getMovie();
-    this.nextNum = 0;
-    this.searchMovie();
   }
 
   private getMovie() {
-    this.dataService
+    return this.dataService
       .getAll()
       .subscribe(
-        res => (this.movie = res.filter(m => m.slug === this.slug)[0]),
+        res =>
+          res
+            .filter(m => m.slug === this.slug)
+            .forEach(
+              m => (
+                (this.movie = m),
+                (this.queryName = m.name.split(' ').join('%20')),
+                this.searchMovie(this.queryName)
+              )
+            ),
         error => console.log(error)
       );
   }
 
-  private searchMovie(): any {
-    // this.queryName = this.movie.name.split(' ').join('%20');
+  private searchMovie(query: string): any {
     return this.imdbService
-      .searchMovies('Avatar')
+      .searchMovies(query)
       .subscribe(
         res => (
           (this.selectedMovie = res.json().results[0]),
