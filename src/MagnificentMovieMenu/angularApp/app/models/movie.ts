@@ -5,4 +5,5 @@
   category = '';
   rating = 0;
   slug = '';
+  img = '';
 }

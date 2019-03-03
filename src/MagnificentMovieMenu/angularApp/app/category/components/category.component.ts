@@ -93,7 +93,8 @@ export class CategoryComponent implements OnInit {
                   name: m.name,
                   year: this.imdbMovies[0].release_date.slice(0, 4),
                   category: m.category,
-                  slug: m.slug
+                  slug: m.slug,
+                  img: this.imdbMovies[0].poster_path
                 })
                 .subscribe(slugM => {
                   this.slugs.push(slugM as Movie);

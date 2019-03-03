@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using MagnificentMovieMenu.Repositories.Things;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using MagnificentMovieMenu.azureDB;
+using MagnificentMovieMenu.AzureDbContext;
 
 namespace MagnificentMovieMenu
 {
