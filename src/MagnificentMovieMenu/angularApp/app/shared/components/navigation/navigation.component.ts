@@ -10,7 +10,7 @@ import { Movie } from '../../../models/movie';
   templateUrl: 'navigation.component.html'
 })
 export class NavigationComponent {
-  movies$: Observable<Movie[]>;
+  movies$!: Observable<Movie[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private movieService: MovieService) {}
@@ -30,8 +30,12 @@ export class NavigationComponent {
 
   // Push a search term into the observable stream.
   search(term: string): void {
-    if (term.length < 3) this.searchTerms.next('');
-    if (term.length >= 3) this.searchTerms.next(term);
+    if (term.length < 3) {
+      this.searchTerms.next('');
+    }
+    if (term.length >= 3) {
+      this.searchTerms.next(term);
+    }
   }
 
   clear() {

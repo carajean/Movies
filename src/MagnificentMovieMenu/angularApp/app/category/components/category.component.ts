@@ -21,14 +21,14 @@ export class CategoryComponent implements OnInit {
   slugs: Movie[] = [];
   movie: Movie = new Movie();
   sort!: number;
-  queryName: string;
+  queryName!: string;
   imdbMovies: IMDB[] = [];
   findMovies: any;
-  total_results: number;
-  total_pages: number;
-  page: number;
-  query: string;
-  language: string;
+  total_results!: number;
+  total_pages!: number;
+  page!: number;
+  query!: string;
+  language!: string;
 
   constructor(
     private dataService: MovieService,
@@ -48,7 +48,9 @@ export class CategoryComponent implements OnInit {
   }
 
   search(term: string): void {
-    if (term.length < 3) this.searchTerms.next('');
+    if (term.length < 3) {
+      this.searchTerms.next('');
+    }
     if (term.length >= 3) {
       const formatTerm = term.split(' ').join('%20');
       this.searchTerms.next(formatTerm);
@@ -138,7 +140,7 @@ export class CategoryComponent implements OnInit {
             name: this.movie.name,
             year: this.movie.year,
             category: this.category,
-            rating: null,
+            rating: 0,
             slug: res
               .json()
               .results[0].title.split(' ')
