@@ -1,5 +1,4 @@
 // tslint:disable:max-line-length
-import { Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,40 +12,13 @@ export class MovieService {
   private actionUrl: string;
   private headers: HttpHeaders;
   private num: number;
-  private searchUrl = 'https://api.themoviedb.org/3/search/movie';
-  private apiKey = 'fe73970a74055db0be8b3f69e988d6e9';
-  private language = 'en';
 
-  constructor(
-    private http: HttpClient,
-    configuration: Configuration,
-    private imdbHttp: Http
-  ) {
+  constructor(private http: HttpClient, configuration: Configuration) {
     this.actionUrl = configuration.Server + 'api/movie/';
     this.headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*');
     this.headers = this.headers.set('Accept', 'application/json');
     this.headers = this.headers.set('Content-Type', 'application/json');
     this.num = 0;
-  }
-
-  /* GET movies whose name contains search term */
-  searchMovies(term: string) {
-    if (term.trim().length < 3) {
-      // if not search term, return empty movie array.
-      return;
-    } else {
-      term = term.split(' ').join('%20');
-    }
-    const searchUrl = `${this.searchUrl}?api_key=${this.apiKey}&language=${
-      this.language
-    }&query=${term}`;
-
-    // return this.imdbHttp.get(searchUrl);
-
-    return this.imdbHttp.get(searchUrl).subscribe(res => {
-      console.log('RESULTS: ', res.json().results[0].title);
-      res.json();
-    });
   }
 
   getAll(): Observable<Movie[]> {
@@ -57,21 +29,6 @@ export class MovieService {
         this.num = result ? result[result.length - 1].id + 1 : 1;
       });
     return this.http.get<Movie[]>(this.actionUrl, { headers: this.headers });
-  }
-
-  getSingle(slug: string): Observable<Movie> {
-    console.log(
-      this.http
-        .get(
-          'https://api.themoviedb.org/3/movie/550?api_key=fe73970a74055db0be8b3f69e988d6e9',
-          { headers: this.headers }
-        )
-        .toPromise()
-    );
-
-    return this.http.get<Movie>(this.actionUrl + slug, {
-      headers: this.headers
-    });
   }
 
   add(movieToAdd: Movie): Observable<Movie> {
@@ -103,9 +60,4 @@ export class MovieService {
       headers: this.headers
     });
   }
-
-  // private extractData(res: Response) {
-  //   const body = res.json();
-  //   return body.results || {};
-  // }
 }

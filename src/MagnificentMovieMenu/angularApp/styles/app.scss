@@ -18,7 +18,8 @@ a:hover {
   text-decoration: none;
 }
 
-button {
+button,
+#singleMovieImg {
   transition: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -36,8 +37,18 @@ button {
   justify-content: center;
 }
 
+#singleMovieImg {
+  float: left;
+  border: solid 4px rgb(44, 44, 44);
+  margin: 15px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
 #movieDetailDiv {
-  width: 500px;
+  width: 1000px;
+  padding: 15px;
+  height: 540px;
 }
 
 #movieDetailDiv > * {

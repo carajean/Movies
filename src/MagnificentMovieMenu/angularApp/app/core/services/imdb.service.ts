@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-
-// import { IMDB } from '../../models/IMDB';
 
 @Injectable()
 export class IMDBService {
@@ -16,23 +13,17 @@ export class IMDBService {
   constructor(private http: Http) {}
 
   getMovies() {
-    // const moviesUrl = `${this.url}popular?api_key=${this.apiKey}&language=${
-    //   this.language
-    // }`;
-    const sampleUrl =
-      'https://api.themoviedb.org/3/movie/550?api_key=fe73970a74055db0be8b3f69e988d6e9';
-    this.http.get(sampleUrl).subscribe({
+    const moviesUrl = `${this.url}popular?api_key=${this.apiKey}&language=${
+      this.language
+    }`;
+    this.http.get(moviesUrl).subscribe({
       next(res) {
-        console.log(res.json());
+        return res.json();
       },
       error(msg) {
         console.log('Error Getting IMDB: ', msg);
       }
     });
-
-    // return this.http.get(`https://api.themoviedb.org/3/movie/550?api_key=fe73970a74055db0be8b3f69e988d6e9`)
-    // .map((response: Response) => response.json())
-    // .do(value => console.log(value));
   }
 
   searchMovies(query: string) {
@@ -40,7 +31,7 @@ export class IMDBService {
       this.language
     }&query=${query}`;
 
-    return this.http.get(searchUrl).map(this.extractData);
+    return this.http.get(searchUrl);
   }
 
   getDetails(id: number) {
@@ -48,13 +39,13 @@ export class IMDBService {
       this.language
     }`;
 
-    return this.http.get(detailsUrl).map(res => {
-      return res.json();
+    this.http.get(detailsUrl).subscribe({
+      next(res) {
+        return res.json();
+      },
+      error(msg) {
+        console.log('Error Getting IMDB: ', msg);
+      }
     });
-  }
-
-  private extractData(res: Response) {
-    const body = res.json();
-    return body.results || {};
   }
 }

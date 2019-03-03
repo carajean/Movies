@@ -19,6 +19,7 @@ export class MovieDetailComponent implements OnInit {
   movies: Movie[] = [];
   movie!: Movie;
   selectedMovie!: IMDB;
+  queryName!: string;
 
   constructor(
     private dataService: MovieService,
@@ -33,21 +34,29 @@ export class MovieDetailComponent implements OnInit {
     this.slug = this.route.snapshot.paramMap.get(`slug`) || '';
     this.getMovie();
     this.nextNum = 0;
+    this.searchMovie();
   }
 
   private getMovie() {
-    this.imdbService.getMovies();
     this.dataService
       .getAll()
       .subscribe(
-        data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
+        res => (this.movie = res.filter(m => m.slug === this.slug)[0]),
         error => console.log(error)
       );
   }
 
-  searchMovie() {
-    const queryStr = this.movie.name.split(' ').join('%20');
-    return this.imdbService.searchMovies(queryStr);
+  private searchMovie(): any {
+    // this.queryName = this.movie.name.split(' ').join('%20');
+    return this.imdbService
+      .searchMovies('Avatar')
+      .subscribe(
+        res => (
+          (this.selectedMovie = res.json().results[0]),
+          console.log(this.selectedMovie)
+        ),
+        error => console.log(error)
+      );
   }
 
   addMovie() {
