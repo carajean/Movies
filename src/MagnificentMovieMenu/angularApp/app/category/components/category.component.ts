@@ -90,7 +90,7 @@ export class CategoryComponent implements OnInit {
               this.imdbMovies.unshift(res.json().results[0]),
               this.dataService
                 .update(m.id, {
-                  name: m.name,
+                  name: this.imdbMovies[0].title,
                   year: this.imdbMovies[0].release_date.slice(0, 4),
                   category: m.category,
                   slug: m.slug,
@@ -131,7 +131,7 @@ export class CategoryComponent implements OnInit {
           .json()
           .results[0].title.split(' ')
           .join('')),
-        console.log(this.movie),
+        (this.movie.year = res.json().results[0].poster_path),
         this.dataService
           .add({
             id: this.nextNum,
@@ -142,7 +142,8 @@ export class CategoryComponent implements OnInit {
             slug: res
               .json()
               .results[0].title.split(' ')
-              .join('')
+              .join(''),
+            img: this.movie.img
           })
           .subscribe(
             () => {
@@ -155,16 +156,6 @@ export class CategoryComponent implements OnInit {
           )
       )
     );
-
-    // this.dataService.add(this.movie).subscribe(
-    //   () => {
-    //     this.getMoviesByCategory();
-    //     this.movie = new Movie();
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
   }
 
   deleteMovie(movie: Movie) {

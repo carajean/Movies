@@ -45,6 +45,35 @@ button,
   margin-left: 40px;
 }
 
+.categoryMovies {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.cateogoryMovieTitle {
+  padding-top: 2px;
+  text-emphasis: bold;
+  font-size: 14px;
+}
+
+.movieDiv {
+  margin: 10px;
+}
+
+.movieDiv > * {
+  padding: 2px;
+  margin: 0;
+}
+
+.categoryMovieImg {
+  border: solid 4px rgb(44, 44, 44);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 200px;
+  width: auto;
+  padding: 0;
+}
+
 #movieDetailDiv {
   width: 1000px;
   padding: 15px;

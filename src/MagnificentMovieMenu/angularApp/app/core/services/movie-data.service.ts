@@ -52,7 +52,8 @@ export class MovieService {
       year: movieToAdd.year,
       category: movieToAdd.category,
       rating: movieToAdd.rating,
-      slug: movieToAdd.slug
+      slug: movieToAdd.slug,
+      img: movieToAdd.img
     });
 
     return this.http.post<Movie>(this.actionUrl, toAdd, {
