@@ -1,16 +1,15 @@
-<div id="movieDetailDiv" *ngIf="movie" class="jumbotron">
-  <a href="http://www.imdb.com/title/{{ this.selectedMovie?.imdb_id }}/">
-    <img id="singleMovieImg" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{this.selectedMovie?.poster_path}}">
+<div id="movieDetailDiv" class="jumbotron">
+  <a href="http://www.imdb.com/title/{{ this.selectedMovie.imdb_id }}/">
+    <img id="singleMovieImg" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{this.selectedMovie.poster_path}}">
   </a>
-  <i *ngFor="let genre of this.selectedMovie?.genres" class="ui orange label">{{ genre.name }}</i>
-  <h3 class="movieName">{{this.selectedMovie?.title}}</h3>
+  <h3 class="movieName">{{this.selectedMovie.title}}</h3>
   <div><span>Release Year: </span>{{this.movie.year}}</div>
   <div>
     <span>Category: </span>
     <a routerLink="/menu/{{this.movie.category}}">
     {{this.movie.category}}</a>
   </div>
-  <div>{{ this.selectedMovie?.overview }}</div>
+  <div>{{ this.selectedMovie.overview }}</div>
 
   <button (click)="rate()">Rate Movie</button>
 </div>

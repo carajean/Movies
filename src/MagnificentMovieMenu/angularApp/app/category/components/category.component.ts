@@ -45,20 +45,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.getMoviesByCategory();
-
-    this.movies$ = [];
-    // this.movies$ = this.searchTerms.pipe(
-    //   // wait 300ms after each keystroke before considering the term
-    //   debounceTime(200),
-
-    //   // ignore new term if same as previous term
-    //   distinctUntilChanged()
-
-    //   // switch to new search observable each time the term changes
-    //   // switchMap((term: string, index: number) =>
-    //   //   this.imdbService.findMovies(term)
-    //   // )
-    // );
   }
 
   search(term: string): void {
@@ -136,16 +122,48 @@ export class CategoryComponent implements OnInit {
   addMovie() {
     this.movie.id = this.nextNum;
     this.movie.category = this.category;
-    this.movie.year = 2019;
-    this.dataService.add(this.movie).subscribe(
-      () => {
-        this.getMoviesByCategory();
-        this.movie = new Movie();
-      },
-      error => {
-        console.log(error);
-      }
+    this.queryName = this.movie.name.split(' ').join('%20');
+    this.imdbService.searchMovies(this.queryName).subscribe(
+      res => (
+        (this.movie.year = res.json().results[0].release_date.slice(0, 4)),
+        (this.movie.slug = res
+          .json()
+          .results[0].title.split(' ')
+          .join('')),
+        console.log(this.movie),
+        this.dataService
+          .add({
+            id: this.nextNum,
+            name: this.movie.name,
+            year: this.movie.year,
+            category: this.category,
+            rating: null,
+            slug: res
+              .json()
+              .results[0].title.split(' ')
+              .join('')
+          })
+          .subscribe(
+            () => {
+              this.getMoviesByCategory();
+              this.movie = new Movie();
+            },
+            error => {
+              console.log(error);
+            }
+          )
+      )
     );
+
+    // this.dataService.add(this.movie).subscribe(
+    //   () => {
+    //     this.getMoviesByCategory();
+    //     this.movie = new Movie();
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   deleteMovie(movie: Movie) {

@@ -21,6 +21,20 @@ export class MovieService {
     this.num = 0;
   }
 
+  // searchMovies(term: string): Observable<Movie[]> {
+  //   if (term.trim().length < 3) {
+  //     // if not search term, return empty movie array.
+  //     return of([]);
+  //   }
+  //   this.http
+  //     .get<Movie[]>(this.actionUrl, { headers: this.headers })
+  //     .subscribe(result => {
+  //       this.moviesFound = result.filter(m => m.name.includes(term));
+  //     });
+  //   return this.moviesFound;
+
+  // }
+
   getAll(): Observable<Movie[]> {
     this.http
       .get<Movie[]>(this.actionUrl, { headers: this.headers })
@@ -37,7 +51,8 @@ export class MovieService {
       name: movieToAdd.name,
       year: movieToAdd.year,
       category: movieToAdd.category,
-      rating: movieToAdd.rating
+      rating: movieToAdd.rating,
+      slug: movieToAdd.slug
     });
 
     return this.http.post<Movie>(this.actionUrl, toAdd, {
