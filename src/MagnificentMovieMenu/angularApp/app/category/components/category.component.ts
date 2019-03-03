@@ -69,12 +69,35 @@ export class CategoryComponent implements OnInit {
     }
   }
 
+  private getAllMovies() {
+    this.dataService.getAll().subscribe(
+      data => (
+        (this.movies = data),
+        this.movies.forEach(m => {
+          m.slug = m.name.split(' ').join('');
+          this.dataService
+            .update(m.id, {
+              name: m.name,
+              year: m.year,
+              category: m.category,
+              slug: m.slug
+            })
+            .subscribe(slugM => {
+              this.slugs.push(slugM as Movie);
+            });
+        }),
+        (this.nextNum = this.movies.length)
+      ),
+      error => console.log(error)
+    );
+    this.movies = this.slugs;
+  }
+
   private getMoviesByCategory() {
     this.dataService.getAll().subscribe(
       data => (
         (this.movies = data.filter(m => m.category === this.category)),
         this.movies.forEach(m => {
-          m.slug = m.name.split(' ').join('');
           this.queryName = m.name.split(' ').join('%20');
           this.imdbService.searchMovies(this.queryName).subscribe(
             res => (
@@ -134,29 +157,5 @@ export class CategoryComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  private getAllMovies() {
-    this.dataService.getAll().subscribe(
-      data => (
-        (this.movies = data),
-        this.movies.forEach(m => {
-          m.slug = m.name.split(' ').join('');
-          this.dataService
-            .update(m.id, {
-              name: m.name,
-              year: m.year,
-              category: m.category,
-              slug: m.slug
-            })
-            .subscribe(slugM => {
-              this.slugs.push(slugM as Movie);
-            });
-        }),
-        (this.nextNum = this.movies.length)
-      ),
-      error => console.log(error)
-    );
-    this.movies = this.slugs;
   }
 }

@@ -19,6 +19,7 @@
     <Compile Remove="movies\List.cs" />
     <Compile Remove="movies\Movie.cs" />
     <Compile Remove="movies\moviesContext.cs" />
+    <Compile Remove="angularApp\app\movie-detail\components\imdb-detail.component.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="angularApp\app\category\" />
