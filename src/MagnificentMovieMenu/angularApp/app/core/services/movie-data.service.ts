@@ -60,6 +60,15 @@ export class MovieService {
   }
 
   getSingle(slug: string): Observable<Movie> {
+    console.log(
+      this.http
+        .get(
+          'https://api.themoviedb.org/3/movie/550?api_key=fe73970a74055db0be8b3f69e988d6e9',
+          { headers: this.headers }
+        )
+        .toPromise()
+    );
+
     return this.http.get<Movie>(this.actionUrl + slug, {
       headers: this.headers
     });
@@ -94,4 +103,9 @@ export class MovieService {
       headers: this.headers
     });
   }
+
+  // private extractData(res: Response) {
+  //   const body = res.json();
+  //   return body.results || {};
+  // }
 }

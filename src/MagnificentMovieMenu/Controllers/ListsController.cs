@@ -11,7 +11,7 @@ using Newtonsoft.Json.Linq;
 namespace MagnificentMovieMenu.Controllers
 {
   [Produces("application/json")]
-  [Route("api/list")]
+  [Route("api/lists")]
   [EnableCors("AllowAll")]
 
   public class ListsController : Microsoft.AspNetCore.Mvc.Controller

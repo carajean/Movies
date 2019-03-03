@@ -35,6 +35,16 @@ export class MovieDetailComponent implements OnInit {
     this.nextNum = 0;
   }
 
+  private getMovie() {
+    this.imdbService.getMovies();
+    this.dataService
+      .getAll()
+      .subscribe(
+        data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
+        error => console.log(error)
+      );
+  }
+
   searchMovie() {
     const queryStr = this.movie.name.split(' ').join('%20');
     return this.imdbService.searchMovies(queryStr);
@@ -62,15 +72,6 @@ export class MovieDetailComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  private getMovie() {
-    this.dataService
-      .getAll()
-      .subscribe(
-        data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
-        error => console.log(error)
-      );
   }
 
   goBack(): void {

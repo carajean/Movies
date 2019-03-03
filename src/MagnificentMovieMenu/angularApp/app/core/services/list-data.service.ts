@@ -12,7 +12,7 @@ export class ListService {
   private num: number;
 
   constructor(private http: HttpClient, configuration: Configuration) {
-    this.actionUrl = configuration.Server + 'api/list/';
+    this.actionUrl = configuration.Server + 'api/lists/';
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json');
     this.headers = this.headers.set('Accept', 'application/json');
