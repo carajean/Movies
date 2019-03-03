@@ -23,6 +23,16 @@
     "test-ci": "karma start --single-run --browsers ChromeHeadless",
     "lint": "tslint -p tsconfig.json angularApp/**/*.ts"
   },
+  "keywords": [
+    "heroku"
+  ],
+  "engines": {
+    "node": "10.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/magnificent-movie-menu"
+  },
   "dependencies": {
     "@angular/animations": "~7.2.6",
     "@angular/common": "~7.2.6",
@@ -39,12 +49,23 @@
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.29"
-  },
-  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.3",
+    "@angular/animations": "~7.2.6",
+    "@angular/cli": "^6.0.0-rc.0",
+    "@angular/common": "~7.2.6",
+    "@angular/compiler": "~7.2.6",
+    "@angular/compiler-cli": "~7.2.6",
+    "@angular/core": "~7.2.6",
+    "@angular/forms": "~7.2.6",
+    "@angular/http": "~7.2.6",
+    "@angular/language-service": "~7.2.6",
+    "@angular/platform-browser": "~7.2.6",
+    "@angular/platform-browser-dynamic": "~7.2.6",
+    "@angular/router": "~7.2.6",
     "@angular-devkit/build-angular": "~0.13.3",
     "@angular/cli": "^6.0.0-rc.0",
     "@angular/compiler-cli": "~7.2.6",
-    "@angular/language-service": "~7.2.6",
+    "@angular/language-service": "~7.2.6"
     "@ngtools/webpack": "^6.2.5",
     "@types/jasmine": "~3.3.9",
     "@types/jasminewd2": "~2.0.6",
@@ -52,13 +73,18 @@
     "angular-router-loader": "0.8.5",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^5.2.1",
+    "bootstrap": "4.3.1",
     "clean-webpack-plugin": "^1.0.1",
     "codelyzer": "~4.5.0",
     "concurrently": "^4.1.0",
     "copy-webpack-plugin": "^5.0.0",
+    "core-js": "^2.6.5",
     "css-loader": "^2.1.0",
+    "egs": "^0.3.1",
+    "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "ie-shim": "0.1.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jquery": "^3.3.1",
@@ -72,9 +98,12 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-webpack": "3.0.5",
     "node-sass": "^4.11.0",
+    "pg": "^7.8.1",
     "protractor": "~5.4.2",
     "raw-loader": "^1.0.0",
     "rimraf": "^2.6.3",
+    "rxjs": "~6.4.0",
+    "rxjs-compat": "^6.4.0",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
@@ -89,8 +118,10 @@
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "^3.2.0",
-    "webpack-filter-warnings-plugin": "^1.2.1"
+    "webpack-filter-warnings-plugin": "^1.2.1",
+    "zone.js": "~0.8.29"
   },
+  "devDependencies": {},
   "-vs-binding": {
     "ProjectOpened": [
       "watch-webpack-dev"

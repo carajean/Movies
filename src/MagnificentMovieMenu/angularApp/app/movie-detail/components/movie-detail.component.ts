@@ -17,7 +17,7 @@ export class MovieDetailComponent implements OnInit {
   nextNum!: number;
   slug!: string;
   movies: Movie[] = [];
-  movie!: Movie;
+  movie: Movie;
   selectedMovie!: IMDB;
   queryName!: string;
 
@@ -87,6 +87,15 @@ export class MovieDetailComponent implements OnInit {
     );
   }
 
+  private getMovie() {
+    this.dataService
+      .getAll()
+      .subscribe(
+        data => (this.movie = data.filter(m => m.slug === this.slug)[0]),
+        error => console.log(error)
+      );
+    this.searchMovie(this.movie.name);
+  }
   goBack(): void {
     this.location.back();
   }
