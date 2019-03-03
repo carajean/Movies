@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { CategoryComponent } from './components/category.component';
 import { CategoryRoutes } from './category.routes';
-import { MovieSearchComponent } from '../movie-search/components/movie-search.component';
+import { MovieSearchComponent } from './components/movie-search.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, HttpClientModule, CategoryRoutes],

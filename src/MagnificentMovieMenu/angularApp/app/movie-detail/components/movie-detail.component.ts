@@ -54,14 +54,11 @@ export class MovieDetailComponent implements OnInit {
       );
   }
 
-  private searchMovie(query: string): any {
-    return this.imdbService
+  private searchMovie(query: string) {
+    this.imdbService
       .searchMovies(query)
       .subscribe(
-        res => (
-          (this.selectedMovie = res.json().results[0]),
-          console.log(this.selectedMovie)
-        ),
+        res => (this.selectedMovie = res.json().results[0]),
         error => console.log(error)
       );
   }

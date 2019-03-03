@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { of } from 'rxjs';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -34,18 +35,16 @@ export class IMDBService {
     return this.http.get(searchUrl);
   }
 
-  getDetails(id: number) {
-    const detailsUrl = `${this.url}${id}?api_key=${this.apiKey}&language=${
+  findMovies(query: string) {
+    if (query.trim().length < 3) {
+      // if not search term, return empty movie array.
+      return of([]);
+    }
+    const searchUrl = `${this.searchUrl}?api_key=${this.apiKey}&language=${
       this.language
-    }`;
-
-    this.http.get(detailsUrl).subscribe({
-      next(res) {
-        return res.json();
-      },
-      error(msg) {
-        console.log('Error Getting IMDB: ', msg);
-      }
+    }&query=${query}`;
+    return this.http.get(searchUrl).subscribe(res => {
+      return res.json().title;
     });
   }
 }
