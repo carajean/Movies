@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
+// import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { MovieService } from './../../core/services/movie-data.service';
 import { Movie } from './../../models/movie';
@@ -11,6 +13,8 @@ import { IMDB } from './../../models/IMDB';
   templateUrl: './category.component.html'
 })
 export class CategoryComponent implements OnInit {
+  private searchTerms = new Subject<string>();
+  movies$: any;
   nextNum!: number;
   category!: string;
   movies: Movie[] = [];
@@ -41,6 +45,28 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.getMoviesByCategory();
+
+    this.movies$ = [];
+    // this.movies$ = this.searchTerms.pipe(
+    //   // wait 300ms after each keystroke before considering the term
+    //   debounceTime(200),
+
+    //   // ignore new term if same as previous term
+    //   distinctUntilChanged()
+
+    //   // switch to new search observable each time the term changes
+    //   // switchMap((term: string, index: number) =>
+    //   //   this.imdbService.findMovies(term)
+    //   // )
+    // );
+  }
+
+  search(term: string): void {
+    if (term.length < 3) this.searchTerms.next('');
+    if (term.length >= 3) {
+      const formatTerm = term.split(' ').join('%20');
+      this.searchTerms.next(formatTerm);
+    }
   }
 
   private getMoviesByCategory() {
