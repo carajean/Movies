@@ -61,7 +61,7 @@ namespace MagnificentMovieMenu.Controllers
       }
     }
 
-    // DELETE api/list/5
+    // DELETE api/list/:id
     [HttpDelete("{id}")]
     public void Delete(int id)
     {

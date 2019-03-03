@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -93,5 +93,37 @@ export class MovieDetailComponent implements OnInit {
 
   rate(): void {
     // this.movieService.updateMovie(this.movie).subscribe(() => this.goBack());
+  }
+
+  @Input() rating: number;
+  @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
+
+  inputName: string;
+
+  onClick(rating: number): void {
+    this.rating = rating;
+    this.dataService
+      .update(this.movie.id, {
+        id: this.movie.id,
+        name: this.movie.name,
+        year: this.movie.year,
+        category: this.movie.category,
+        slug: this.movie.slug,
+        img: this.movie.img,
+        rating
+      })
+      .subscribe(
+        () => {
+          this.getMovie();
+          this.movie.id = this.nextNum;
+          this.movie = new Movie();
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    this.ratingClick.emit({
+      rating: rating
+    });
   }
 }

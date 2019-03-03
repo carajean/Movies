@@ -68,7 +68,7 @@ namespace MagnificentMovieMenu.Controllers
       }
     }
 
-    // DELETE api/movie/5
+    // DELETE api/movie/:id
     [HttpDelete("{id}")]
     [EnableCors("AllowAll")]
 

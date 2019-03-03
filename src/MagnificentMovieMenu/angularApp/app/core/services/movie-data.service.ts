@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 
 import { Configuration } from './../../app.constants';
 import { Movie } from './../../models/movie';
-// import { IMDB } from './../../models/IMDB';
 
 @Injectable()
 export class MovieService {
@@ -20,20 +19,6 @@ export class MovieService {
     this.headers = this.headers.set('Content-Type', 'application/json');
     this.num = 0;
   }
-
-  // searchMovies(term: string): Observable<Movie[]> {
-  //   if (term.trim().length < 3) {
-  //     // if not search term, return empty movie array.
-  //     return of([]);
-  //   }
-  //   this.http
-  //     .get<Movie[]>(this.actionUrl, { headers: this.headers })
-  //     .subscribe(result => {
-  //       this.moviesFound = result.filter(m => m.name.includes(term));
-  //     });
-  //   return this.moviesFound;
-
-  // }
 
   getAll(): Observable<Movie[]> {
     this.http
