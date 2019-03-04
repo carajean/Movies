@@ -17,14 +17,7 @@ export class IMDBService {
     const moviesUrl = `${this.url}popular?api_key=${this.apiKey}&language=${
       this.language
     }`;
-    this.http.get(moviesUrl).subscribe({
-      next(res) {
-        return res.json();
-      },
-      error(msg) {
-        console.log('Error Getting IMDB: ', msg);
-      }
-    });
+    return this.http.get(moviesUrl);
   }
 
   searchMovies(query: string) {

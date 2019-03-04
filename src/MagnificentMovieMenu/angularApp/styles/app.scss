@@ -1,3 +1,8 @@
+body {
+  background-color: rgb(14, 6, 17);
+  margin-top: 110px;
+}
+
 h1,
 h2,
 h3,
@@ -130,6 +135,7 @@ fieldset {
   padding: 2px;
   margin: 0;
   text-align: center;
+  color: rgb(211, 211, 211);
 }
 
 .categoryMovieImg {
@@ -201,7 +207,6 @@ fieldset {
 }
 
 .delListBtn {
-  float: right;
   padding: 5px;
   border-radius: 50%;
   height: 30px;
@@ -232,7 +237,7 @@ fieldset {
 }
 
 .categoryName {
-  color: rgb(77, 1, 107) !important;
+  color: rgb(152, 99, 173) !important;
 }
 
 [class*='col-'] {
@@ -276,7 +281,7 @@ h4 {
   max-height: 120px;
   min-width: 120px;
   background-color: #6a5d8f;
-  border-radius: 50px;
+  border-radius: 20px;
   transition: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -343,4 +348,41 @@ h4 {
 ul.search-result {
   margin-top: 0;
   padding-left: 0;
+}
+
+#carousel {
+  margin-top: 40px;
+  float: left;
+  height: 450px;
+  width: 300px;
+}
+
+#carousel > * {
+  margin-right: 20px;
+  margin-left: -20px;
+  height: 450px !important;
+  width: auto !important;
+  border: solid 4px rgb(44, 44, 44);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.headerNav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10px !important;
+}
+
+.footerNav {
+  background-color: rgb(15, 38, 53) !important;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footerNavTxt,
+.footerNav > a {
+  color: rgb(180, 180, 180) !important;
+  transition: 0.4s;
 }

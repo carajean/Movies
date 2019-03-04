@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { ListService } from './../../core/services/list-data.service';
 import { List } from './../../models/list';
+import { IMDBService } from './../../core/services/imdb.service';
+import { IMDB } from './../../models/IMDB';
 
 @Component({
   selector: 'app-home-component',
@@ -12,14 +14,30 @@ export class HomeComponent implements OnInit {
   nextNum!: number;
   lists: List[] = [];
   list: List = new List();
+  imdbMovies: IMDB[];
 
-  constructor(private dataService: ListService) {
+  constructor(
+    private dataService: ListService,
+    private imdbService: IMDBService
+  ) {
     this.message = 'Magnificent Movie Menu';
   }
 
   ngOnInit() {
+    this.searchMovies();
     this.getAllLists();
     this.nextNum = 0;
+  }
+
+  private searchMovies() {
+    this.imdbService
+      .getMovies()
+      .subscribe(
+        res => (
+          (this.imdbMovies = res.json().results),
+          console.log(res.json().results)
+        )
+      );
   }
 
   addList() {

@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-// import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { MovieService } from './../../core/services/movie-data.service';
 import { Movie } from './../../models/movie';
@@ -79,6 +78,7 @@ export class CategoryComponent implements OnInit {
       error => console.log(error)
     );
     this.movies = this.slugs;
+    console.log(this.movies);
   }
 
   private getMoviesByCategory() {
