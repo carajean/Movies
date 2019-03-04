@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
+import { Location } from '@angular/common';
 
 import { MovieService } from './../../core/services/movie-data.service';
 import { Movie } from './../../models/movie';
@@ -32,7 +33,8 @@ export class CategoryComponent implements OnInit {
   constructor(
     private dataService: MovieService,
     private imdbService: IMDBService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     this.nextNum = 0;
     this.category = this.route.snapshot.paramMap.get('name') || '';
@@ -67,7 +69,9 @@ export class CategoryComponent implements OnInit {
               name: m.name,
               year: m.year,
               category: m.category,
-              slug: m.slug
+              slug: m.slug,
+              rating: m.rating,
+              img: m.img
             })
             .subscribe(slugM => {
               this.slugs.push(slugM as Movie);
@@ -160,6 +164,7 @@ export class CategoryComponent implements OnInit {
           )
       )
     );
+    this.location.go(`localhost:8080/api/movie/${this.movie.slug}`);
   }
 
   deleteMovie(movie: Movie) {

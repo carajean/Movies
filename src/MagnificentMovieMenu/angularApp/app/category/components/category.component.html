@@ -2,8 +2,7 @@
 <br />
 
 <div *ngIf="this.category !== 'All Movies'">
-    <form class="mt-4 row" class="inputField" #movieForm="ngForm" (ngSubmit)="addMovie()">
-        <div class="row justify-content-md-center">
+    <form class="mt-4 row" class="inputFieldCategory" #movieForm="ngForm" (ngSubmit)="addMovie()">
             <div class="col-5">
                 <div class="input-group">
                     <label class="sr-only" for="exampleInputMovie">Movie</label>
@@ -13,7 +12,6 @@
                     </span>
                 </div>
             </div>
-        </div>
     </form>
 
     <div *ngIf="movies.length > 0" class="mt-4 row flex-container categoryMovies">
@@ -59,7 +57,8 @@
                 <th>Year</th>
                 <th>Movie</th>
                 <th>Category</th>
-                <th class="text-right">&nbsp;</th>
+                <th>Rating</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -69,7 +68,25 @@
                     <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
                 </td>
                 <td>{{movie.category}}</td>
-                <td class="text-right">
+                <td>
+                    <fieldset class="ratingCategory">
+                        <input type="radio" [name]="inputName" value="5" [checked]="movie.rating===5" />
+                        <label title="Love it!" (click)='onClick(5, movie.name)'>5 stars</label>
+
+                        <input type="radio" [name]="inputName" value="4" [checked]="movie.rating===4" />
+                        <label title="Good" (click)='onClick(4, movie.name)'>4 stars</label>
+
+                        <input type="radio" [name]="inputName" value="3" [checked]="movie.rating===3" />
+                        <label title="Alright" (click)='onClick(3, movie.name)'>3 stars</label>
+
+                        <input type="radio" [name]="inputName" value="2" [checked]="movie.rating===2" />
+                        <label title="Meh" (click)='onClick(2, movie.name)'>2 stars</label>
+
+                        <input type="radio" [name]="inputName" value="1" [checked]="movie.rating===1" />
+                        <label title="Bad" (click)='onClick(1, movie.name)'>1 star</label>
+                    </fieldset>
+                <td>
+                <td>
                     <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
                 </td>
             </tr>

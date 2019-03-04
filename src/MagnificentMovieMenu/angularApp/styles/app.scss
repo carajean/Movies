@@ -5,6 +5,7 @@ body {
 
 .container {
   width: 80%;
+  padding-top: 30px;
 }
 
 h1,
@@ -21,10 +22,12 @@ a {
 
 a {
   color: #03a9f4;
+  transition: 0.4s;
 }
 
 a:hover {
   text-decoration: none;
+  color: #99d1eb;
 }
 
 button,
@@ -112,7 +115,16 @@ fieldset {
   margin-left: 40px;
 }
 
+form {
+  width: 250px !important;
+}
+
+.mt-4 {
+  margin-top: 70px !important;
+}
+
 .categoryMovies {
+  margin-top: 75px !important;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -240,12 +252,24 @@ fieldset {
   margin: 5px;
 }
 
-.inputField {
+.inputFieldCategory,
+#inputField {
   margin: auto;
+  position: absolute;
+  top: 27px;
+  right: -392px;
+  width: 772px !important;
+}
+
+.input-group {
+  width: 250px !important;
 }
 
 .categoryName {
   color: rgb(152, 99, 173) !important;
+  padding: 15px;
+  margin-bottom: -100px;
+  display: block;
 }
 
 [class*='col-'] {
@@ -357,7 +381,6 @@ ul.search-result {
 }
 
 #carousel {
-  margin-top: 40px;
   float: left;
   height: 450px;
   width: 300px;
