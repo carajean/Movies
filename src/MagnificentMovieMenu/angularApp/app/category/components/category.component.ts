@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
 import { Location } from '@angular/common';
 
 import { MovieService } from './../../core/services/movie-data.service';
@@ -13,22 +12,13 @@ import { IMDB } from './../../models/IMDB';
   templateUrl: './category.component.html'
 })
 export class CategoryComponent implements OnInit {
-  private searchTerms = new Subject<string>();
-  movies$: any;
   nextNum!: number;
   category!: string;
   movies: Movie[] = [];
   slugs: Movie[] = [];
   movie: Movie = new Movie();
-  sort!: number;
   queryName!: string;
   imdbMovies: IMDB[] = [];
-  findMovies: any;
-  total_results!: number;
-  total_pages!: number;
-  page!: number;
-  query!: string;
-  language!: string;
 
   constructor(
     private dataService: MovieService,
@@ -36,29 +26,28 @@ export class CategoryComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location
   ) {
-    this.nextNum = 0;
+    this.getIMDBMovies();
+  }
+
+  ngOnInit() {
     this.category = this.route.snapshot.paramMap.get('name') || '';
-    if (this.category === 'all') {
+    if (this.category !== 'all') {
+      this.getMoviesByCategory();
+    } else {
       this.category = 'All Movies';
       this.getAllMovies();
     }
   }
 
-  ngOnInit() {
-    this.getMoviesByCategory();
-  }
-
-  search(term: string): void {
-    if (term.length < 3) {
-      this.searchTerms.next('');
-    }
-    if (term.length >= 3) {
-      const formatTerm = term.split(' ').join('%20');
-      this.searchTerms.next(formatTerm);
-    }
+  ngOnDestroy() {
+    this.movies = [];
   }
 
   private getAllMovies() {
+    this.dataService.getAll().subscribe(data => (this.movies = data));
+  }
+
+  private getIMDBMovies() {
     this.dataService.getAll().subscribe(
       data => (
         (this.movies = data),
@@ -116,16 +105,6 @@ export class CategoryComponent implements OnInit {
       error => console.log(error)
     );
     this.movies = this.slugs;
-  }
-
-  searchMovies(query: string) {
-    const formatQuery = query.split(' ').join('%20');
-    this.imdbService
-      .searchMovies(formatQuery)
-      .subscribe(
-        res => (this.findMovies = res.json().results.slice(0, 5)),
-        error => console.log(error)
-      );
   }
 
   addMovie() {

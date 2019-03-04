@@ -32,12 +32,7 @@ export class HomeComponent implements OnInit {
   private searchMovies() {
     this.imdbService
       .getMovies()
-      .subscribe(
-        res => (
-          (this.imdbMovies = res.json().results),
-          console.log(res.json().results)
-        )
-      );
+      .subscribe(res => (this.imdbMovies = res.json().results));
   }
 
   addList() {

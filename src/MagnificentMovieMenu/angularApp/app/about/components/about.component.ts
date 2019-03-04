@@ -1,3 +1,4 @@
+//tslint:disable
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,3 +15,4 @@ export class AboutComponent {
     this.message2 = "What's next? Here are my ideas:";
   }
 }
+//tslint:enable
