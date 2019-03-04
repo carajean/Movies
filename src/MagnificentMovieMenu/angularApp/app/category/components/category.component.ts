@@ -78,7 +78,6 @@ export class CategoryComponent implements OnInit {
       error => console.log(error)
     );
     this.movies = this.slugs;
-    console.log(this.movies);
   }
 
   private getMoviesByCategory() {
@@ -89,14 +88,16 @@ export class CategoryComponent implements OnInit {
           this.queryName = m.name.split(' ').join('%20');
           this.imdbService.searchMovies(this.queryName).subscribe(
             res => (
-              this.imdbMovies.unshift(res.json().results[0]),
+              this.imdbMovies.push(res.json().results[0]),
               this.dataService
                 .update(m.id, {
-                  name: this.imdbMovies[0].title,
-                  year: this.imdbMovies[0].release_date.slice(0, 4),
+                  name: this.imdbMovies[this.imdbMovies.length - 1].title,
+                  year: this.imdbMovies[
+                    this.imdbMovies.length - 1
+                  ].release_date.slice(0, 4),
                   category: m.category,
                   slug: m.slug,
-                  img: this.imdbMovies[0].poster_path,
+                  img: this.imdbMovies[this.imdbMovies.length - 1].poster_path,
                   rating: m.rating
                 })
                 .subscribe(slugM => {
@@ -134,14 +135,14 @@ export class CategoryComponent implements OnInit {
           .json()
           .results[0].title.split(' ')
           .join('')),
-        (this.movie.year = res.json().results[0].poster_path),
+        console.log(this.movie),
         this.dataService
           .add({
             id: this.nextNum,
             name: this.movie.name,
             year: this.movie.year,
             category: this.category,
-            rating: 0,
+            rating: null,
             slug: res
               .json()
               .results[0].title.split(' ')

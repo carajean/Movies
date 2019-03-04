@@ -3,6 +3,10 @@ body {
   margin-top: 110px;
 }
 
+.container {
+  width: 80%;
+}
+
 h1,
 h2,
 h3,
@@ -197,33 +201,37 @@ fieldset {
   overflow: hidden;
 }
 
+.listName {
+  margin-top: 40px;
+}
+
+.btnDiv {
+  width: 250px !important;
+  text-align: center;
+}
+
 .delMovieBtn {
   margin: auto;
   padding: 5px;
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  background-color: rgb(190, 57, 24);
+  background-color: rgb(93, 22, 22);
+  border: none;
 }
 
 .delListBtn {
-  padding: 5px;
+  margin-top: -50px;
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  margin-right: 20px;
-  background-color: rgb(190, 57, 24);
+  background-color: rgb(93, 22, 22);
+  border: none;
 }
 
 .delListBtn:hover,
 .delMovieBtn:hover {
-  background-color: rgb(153, 19, 19);
-}
-
-.delListBtn {
-  position: relative;
-  left: 30px;
-  bottom: 115px;
+  background-color: rgb(126, 23, 23);
 }
 
 .navImg {
@@ -267,34 +275,32 @@ h4 {
 }
 .grid {
   margin: 0;
+  height: 450px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
-.col-1-4 {
-  width: 25%;
+.box {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 .module {
-  margin: 20px;
-  height: 100px;
-  padding: 15% 0px;
+  height: 150px;
   line-height: 90px;
   text-align: center;
   color: rgb(184, 184, 184);
-  max-height: 120px;
-  min-width: 120px;
-  background-color: #6a5d8f;
-  border-radius: 20px;
+  min-width: 250px;
   transition: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .module:hover {
-  background-color: rgb(61, 41, 116);
+  background-color: rgb(84, 52, 136);
   cursor: pointer;
   color: #f5f5f5;
-}
-.grid-pad {
-  padding: 10px 0;
-}
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
 }
 @media (max-width: 600px) {
   .module {
@@ -385,4 +391,9 @@ ul.search-result {
 .footerNav > a {
   color: rgb(180, 180, 180) !important;
   transition: 0.4s;
+}
+
+.zero {
+  margin: 0;
+  padding: 0;
 }

@@ -20,6 +20,7 @@ export class MovieDetailComponent implements OnInit {
   movie!: Movie;
   selectedMovie!: IMDB;
   queryName!: string;
+  public videoUrl: string;
 
   constructor(
     private dataService: MovieService,
@@ -58,7 +59,12 @@ export class MovieDetailComponent implements OnInit {
     this.imdbService
       .searchMovies(query)
       .subscribe(
-        res => (this.selectedMovie = res.json().results[0]),
+        res => (
+          (this.selectedMovie = res.json().results[0]),
+          (this.videoUrl = `https://www.imdb.com/title/${
+            res.json().results[0].imdb_id
+          }/videoplayer/vi274315801?ref_=tt_ov_vithis.selectedMovie.imdb_id`)
+        ),
         error => console.log(error)
       );
   }
