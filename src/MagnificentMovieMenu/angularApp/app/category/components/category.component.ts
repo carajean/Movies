@@ -105,7 +105,7 @@ export class CategoryComponent implements OnInit {
                   rating: m.rating
                 })
                 .subscribe(slugM => {
-                  this.slugs.push(slugM as Movie);
+                  m = slugM;
                 })
             ),
             error => console.log(error)
@@ -205,6 +205,24 @@ export class CategoryComponent implements OnInit {
             });
         })
       )
+    );
+  }
+
+  sortByCategory() {
+    this.movies = this.movies.sort((a, b) =>
+      a.category > b.category ? 1 : b.category > a.category ? -1 : 0
+    );
+  }
+
+  sortByRating() {
+    this.movies = this.movies.sort((a, b) =>
+      a.rating < b.rating ? 1 : b.rating < a.rating ? -1 : 0
+    );
+  }
+
+  sortByTitle() {
+    this.movies = this.movies.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
     );
   }
 }

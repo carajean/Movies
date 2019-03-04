@@ -30,7 +30,6 @@ a:hover {
   color: #99d1eb;
 }
 
-button,
 #singleMovieImg {
   transition: 0.4s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -441,4 +440,27 @@ ul.search-result {
   padding: 20px;
   margin-top: 20px;
   border-radius: 20px;
+}
+
+#sortBy {
+  background-color: rgb(72, 51, 95);
+  color: rgb(148, 148, 148);
+  height: 39.29px;
+  width: 75px;
+  padding: 9px 14px;
+  position: relative;
+  top: 2px;
+}
+
+.sortBtn {
+  transition: 0.4s;
+  border-radius: 0;
+}
+
+#sortBtns {
+  color: rgb(204, 204, 204);
+  position: absolute;
+  top: 22px;
+  right: 39px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

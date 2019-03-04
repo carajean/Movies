@@ -58,6 +58,13 @@
 </div>
 
 <div *ngIf="this.category === 'All Movies'">
+    <div  id="sortBtns">
+        <span id="sortBy">Sort by...</span>
+        <button class="sortBtn btn btn-primary" (click)="this.sortByCategory()">Category</button>
+        <button class="sortBtn btn btn-primary" (click)="this.sortByTitle()">Title</button>
+        <button class="sortBtn btn btn-primary" (click)="this.sortByRating()">Rating</button>
+    </div>
+
     <div *ngIf="movies.length > 0" class="mt-4 row">
         <div class="col-12 table-responsive movieDiv">
             <table class="table table-striped">

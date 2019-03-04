@@ -8,7 +8,7 @@
 - [x] create & name an unlimited number of lists
 - [x] click on list --> view all movies in that list
 - [x] add new movies to a list & populate data from TMDb
-- [ ] add new movie to list & autopopulate movie titles for input
+- [ ] autopopulate movie titles for search input
 - [x] ability to delete movies
 - [x] lists get saved to/loaded from a database
 - [x] bonus: rate movies with a 5-star system
