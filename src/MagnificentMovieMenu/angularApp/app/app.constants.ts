@@ -2,5 +2,5 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Configuration {
-  public Server = 'https://magnificentmoviemenu.azurewebsites.net/';
+  public Server = 'https://carajeanmoviemenu.azurewebsites.net/';
 }
