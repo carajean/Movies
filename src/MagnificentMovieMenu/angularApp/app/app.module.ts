@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CategoryModule } from './category/category.module';
 import { MovieDetailModule } from './movie-detail/movie-detail.module';
+import { AllMoviesModule } from './all-movies/all-movies.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { MovieDetailModule } from './movie-detail/movie-detail.module';
     HomeModule,
     CategoryModule,
     MovieDetailModule,
-    HttpModule
+    HttpModule,
+    AllMoviesModule
   ],
 
   declarations: [AppComponent],

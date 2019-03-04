@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import { Movie } from '../../../models/movie';
   selector: 'app-navigation',
   templateUrl: 'navigation.component.html'
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   movies$!: Observable<Movie[]>;
   private searchTerms = new Subject<string>();
 
