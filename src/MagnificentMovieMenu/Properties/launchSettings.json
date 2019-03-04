@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "https://magnificentmoviemenu.azurewebsites.net/",
+      "applicationUrl": "https://carajeanmoviemenu.azurewebsites.net/",
       "sslPort": 0
     }
   },
@@ -19,7 +19,7 @@
     "Angular2WebpackVisualStudio": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "https://magnificentmoviemenu.azurewebsites.net/",
+      "launchUrl": "https://carajeanmoviemenu.azurewebsites.net/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

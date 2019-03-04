@@ -10,6 +10,8 @@ using MagnificentMovieMenu.Repositories.Things;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using MagnificentMovieMenu.AzureDbContext;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+
 
 namespace MagnificentMovieMenu
 {
@@ -46,6 +48,21 @@ namespace MagnificentMovieMenu
         });
       });
 
+      // ********************
+      // Setup CORS
+      // ********************
+      // var corsBuilder = new CorsPolicyBuilder();
+      // corsBuilder.AllowAnyHeader();
+      // corsBuilder.AllowAnyMethod();
+      // corsBuilder.AllowAnyOrigin(); // For anyone access.
+      //                               //corsBuilder.WithOrigins("http://localhost:56573"); // for a specific url. Don't add a forward slash on the end!
+      // corsBuilder.AllowCredentials();
+
+      // services.AddCors(options =>
+      // {
+      //   options.AddPolicy("SiteCorsPolicy", corsBuilder.Build());
+      // });
+
       // Add framework services.
       services.AddSingleton<IThingsRepository, ThingsRepository>();
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -70,8 +87,13 @@ namespace MagnificentMovieMenu
         await next();
       });
 
+
+
       app.UseCors("AllowAll");
       //app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+
+      // app.UseCors("SiteCorsPolicy");
+
 
       app.UseDefaultFiles();
       app.UseStaticFiles();
