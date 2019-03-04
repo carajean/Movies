@@ -10,7 +10,7 @@
 - [x] add new movies to a list & populate data from TMDb
 - [ ] add new movie to list & autopopulate movie titles for input
 - [x] ability to delete movies
-- [x] lists should get saved to/loaded from a database
+- [x] lists get saved to/loaded from a database
 - [x] bonus: rate movies with a 5-star system
 - [x] bonus: homepage has carousel for top 15 popular movies from TMDb
 - [ ] bonus: click on a movie, open a trailer or go IMDb page for the movie online
