@@ -19,12 +19,31 @@
     <div *ngFor="let movie of movies; let i = index" class="movieDiv">
         <a class="categoryMovieTitle" routerLink="/movie/{{movie.slug}}">
         <img class="categoryMovieImg" src="https://image.tmdb.org/t/p/w300/{{this.imdbMovies[i].poster_path}}"></a>
+
+        <fieldset class="ratingCategory">
+            <input type="radio" [name]="inputName" value="5" [checked]="movie.rating===5" />
+            <label title="Love it!" (click)='onClick(5, movie.name)'>5 stars</label>
+
+            <input type="radio" [name]="inputName" value="4" [checked]="movie.rating===4" />
+            <label title="Good" (click)='onClick(4, movie.name)'>4 stars</label>
+
+            <input type="radio" [name]="inputName" value="3" [checked]="movie.rating===3" />
+            <label title="Alright" (click)='onClick(3, movie.name)'>3 stars</label>
+
+            <input type="radio" [name]="inputName" value="2" [checked]="movie.rating===2" />
+            <label title="Meh" (click)='onClick(2, movie.name)'>2 stars</label>
+
+            <input type="radio" [name]="inputName" value="1" [checked]="movie.rating===1" />
+            <label title="Bad" (click)='onClick(1, movie.name)'>1 star</label>
+        </fieldset>
+        
         <p>
             <a class="categoryMovieTitle" routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
         </p>
         <p>{{movie.year}}</p>
         <p>{{movie.category}}</p>
         <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
+
     </div>
 </div>
 

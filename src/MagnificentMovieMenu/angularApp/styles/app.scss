@@ -29,17 +29,29 @@ button,
   width: auto;
 }
 
-.rating {
+fieldset {
+  margin: auto !important;
+}
+
+.ratingCategory {
+  font-size: 9pt;
+  height: 35px;
+}
+
+.rating,
+.ratingCategory {
   float: left;
 }
 
-.rating:not(:checked) > input {
+.rating:not(:checked) > input,
+.ratingCategory:not(:checked) > input {
   position: absolute;
   top: -9999px;
   clip: rect(0, 0, 0, 0);
 }
 
-.rating:not(:checked) > label {
+.rating:not(:checked) > label,
+.ratingCategory:not(:checked) > label {
   float: right;
   width: 1em;
   padding: 0.1em;
@@ -51,22 +63,29 @@ button,
   color: #ddd;
 }
 
-.rating:not(:checked) > label:before {
+.rating:not(:checked) > label:before,
+.ratingCategory:not(:checked) > label:before {
   content: '★ ';
 }
 
-.rating > input:checked ~ label {
+.rating > input:checked ~ label,
+.ratingCategory > input:checked ~ label {
   color: #f70;
 }
 
 .rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
+.ratingCategory:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label,
+.ratingCategory:not(:checked) > label:hover ~ label {
   color: gold;
 }
 
 .rating > input:checked ~ label:hover,
+.ratingCategory > input:checked ~ label:hover,
 .rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
+.ratingCategory > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label,
+.ratingCategory > label:hover ~ input:checked ~ label {
   color: #ea0;
 }
 
@@ -88,6 +107,9 @@ button,
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  width: 90%;
+  overflow: scroll;
+  margin: auto;
 }
 
 .cateogoryMovieTitle {
@@ -97,12 +119,17 @@ button,
 }
 
 .movieDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 200px;
   margin: 10px;
 }
 
 .movieDiv > * {
   padding: 2px;
   margin: 0;
+  text-align: center;
 }
 
 .categoryMovieImg {
@@ -111,6 +138,7 @@ button,
   height: 200px;
   width: auto;
   padding: 0;
+  margin-bottom: 2px;
 }
 
 #movieDetailDiv {
@@ -163,8 +191,16 @@ button,
   overflow: hidden;
 }
 
-.delListBtn,
 .delMovieBtn {
+  margin: auto;
+  padding: 5px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: rgb(190, 57, 24);
+}
+
+.delListBtn {
   float: right;
   padding: 5px;
   border-radius: 50%;
