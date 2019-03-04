@@ -13,6 +13,7 @@
 - [x] lists get saved to/loaded from a database
 - [x] bonus: rate movies with a 5-star system
 - [x] bonus: homepage has carousel for top 15 popular movies from TMDb
+- [x] bonus: sort all-movies view by category, title, or rating
 - [ ] bonus: click on a movie, open a trailer or go IMDb page for the movie online
 
 ## Tech
