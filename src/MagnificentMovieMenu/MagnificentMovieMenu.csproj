@@ -30,6 +30,11 @@
     <Content Remove="wwwroot\dist\3.27ed4c60f6c178a54328.chunk.js" />
     <Content Remove="angularApp\app\WatTmdb\packages.config" />
     <Content Remove="angularApp\app\WatTmdb\obj\Debug\project.razor.json" />
+    <Content Remove="wwwroot\dist\vendor.bundle.js.map" />
+    <Content Remove="wwwroot\assets\tv.png" />
+    <Content Remove="wwwroot\assets\goldStar.png" />
+    <Content Remove="wwwroot\assets\silverStar.png" />
+    <Content Remove="wwwroot\assets\redTix.png" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="angularApp\app\category\components\movie-search.component.html" />

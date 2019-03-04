@@ -125,16 +125,5 @@ module.exports = {
     new FilterWarningsPlugin({
       exclude: /System.import/
     })
-
-    // new browserPlugin({
-    //   openOptions: {
-    //     app: [
-    //       'chrome',
-    //       //'--incognito',
-    //       '--disable-web-security', // to enable CORS
-    //       '--user-data-dir=' + path.resolve(chromeUserDataDir) // to let Chrome create and store here developers plugins, settings, etc.
-    //     ]
-    //   }
-    // })
   ]
 };
