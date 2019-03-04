@@ -1,0 +1,51 @@
+<div *ngIf="movies.length > 0" class="mt-4 row">
+    <div class="col-12 table-responsive movieDiv">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year</th>
+                <th>Movie</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let movie of movies; let i = index">
+                <td>{{movie.year}}</td>
+                <td>
+                    <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
+                </td>
+                <td>{{movie.category}}</td>
+                <td>
+                    <fieldset class="ratingCategory">
+                        <input type="radio" [name]="inputName" value="5" [checked]="movie.rating===5" />
+                        <label title="Love it!" (click)='onClick(5, movie.name)'>5 stars</label>
+
+                        <input type="radio" [name]="inputName" value="4" [checked]="movie.rating===4" />
+                        <label title="Good" (click)='onClick(4, movie.name)'>4 stars</label>
+
+                        <input type="radio" [name]="inputName" value="3" [checked]="movie.rating===3" />
+                        <label title="Alright" (click)='onClick(3, movie.name)'>3 stars</label>
+
+                        <input type="radio" [name]="inputName" value="2" [checked]="movie.rating===2" />
+                        <label title="Meh" (click)='onClick(2, movie.name)'>2 stars</label>
+
+                        <input type="radio" [name]="inputName" value="1" [checked]="movie.rating===1" />
+                        <label title="Bad" (click)='onClick(1, movie.name)'>1 star</label>
+                    </fieldset>
+                <td>
+                <td>
+                    <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="movies.length <= 0" class="mt-4 row">
+    <div class="col-12">
+        <div class="oops">You don't have any movies saved!</div>
+    </div>
+</div>
