@@ -406,6 +406,10 @@ ul.search-result {
   top: 0;
   width: 100%;
   margin-bottom: 10px !important;
+  background-image: linear-gradient(
+    rgba(4, 70, 114, 0.39),
+    rgba(51, 28, 104, 0.226)
+  );
 }
 
 .footerNav {
