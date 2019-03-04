@@ -20,8 +20,8 @@
 - [x] SPA using Angular
 - [x] all JS/Angular uses TypeScript
 - [x] backend: uses C# ASP.Net Core, making C# Web API REST endpoints
-- [x] frontend: Bootstrap framework
-- [x] database: uses MySQL
+- [x] frontend: Bootstrap framework & CSS
+- [x] database: MySQL
 - [x] external movie data through The Movie Database API (TMDb)
 - [x] compiled via Webpack
 - [x] deployed via Azure
