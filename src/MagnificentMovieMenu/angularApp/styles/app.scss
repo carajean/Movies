@@ -48,6 +48,13 @@ fieldset {
 .ratingCategory {
   font-size: 9pt;
   height: 35px;
+  cursor: default !important;
+}
+
+.ratingCategoryAll {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .rating,
@@ -86,18 +93,13 @@ fieldset {
 }
 
 .rating:not(:checked) > label:hover,
-.ratingCategory:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label,
-.ratingCategory:not(:checked) > label:hover ~ label {
+.rating:not(:checked) > label:hover ~ label {
   color: gold;
 }
 
 .rating > input:checked ~ label:hover,
-.ratingCategory > input:checked ~ label:hover,
 .rating > input:checked ~ label:hover ~ label,
-.ratingCategory > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label,
-.ratingCategory > label:hover ~ input:checked ~ label {
+.rating > label:hover ~ input:checked ~ label {
   color: #ea0;
 }
 

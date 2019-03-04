@@ -31,7 +31,18 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.category = this.route.snapshot.paramMap.get('name') || '';
-    if (this.category !== 'all') {
+    if (this.category !== 'all' && this.category !== 'All Movies') {
+      this.getMoviesByCategory();
+    } else {
+      this.category = 'All Movies';
+      this.getAllMovies();
+    }
+  }
+
+  ngAfterViewInit() {
+    this.movies = [];
+    this.category = this.route.snapshot.paramMap.get('name') || '';
+    if (this.category !== 'all' && this.category !== 'All Movies') {
       this.getMoviesByCategory();
     } else {
       this.category = 'All Movies';

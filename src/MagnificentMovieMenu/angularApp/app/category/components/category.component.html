@@ -23,20 +23,20 @@
                 <img class="categoryMovieImg" src="https://image.tmdb.org/t/p/w300/{{this.imdbMovies[i]?.poster_path}}"></a>
 
                 <fieldset class="ratingCategory">
-                    <input type="radio" [name]="inputName" value="5" [checked]="movie.rating===5" />
-                    <label title="Love it!" (click)='onClick(5, movie.name)'>5 stars</label>
+                    <input type="radio" value="5" [checked]="movie.rating===5" />
+                    <label title="Love it!">5 stars</label>
 
-                    <input type="radio" [name]="inputName" value="4" [checked]="movie.rating===4" />
-                    <label title="Good" (click)='onClick(4, movie.name)'>4 stars</label>
+                    <input type="radio" value="4" [checked]="movie.rating===4" />
+                    <label title="Good">4 stars</label>
 
-                    <input type="radio" [name]="inputName" value="3" [checked]="movie.rating===3" />
-                    <label title="Alright" (click)='onClick(3, movie.name)'>3 stars</label>
+                    <input type="radio" value="3" [checked]="movie.rating===3" />
+                    <label title="Alright">3 stars</label>
 
-                    <input type="radio" [name]="inputName" value="2" [checked]="movie.rating===2" />
-                    <label title="Meh" (click)='onClick(2, movie.name)'>2 stars</label>
+                    <input type="radio" value="2" [checked]="movie.rating===2" />
+                    <label title="Meh">2 stars</label>
 
-                    <input type="radio" [name]="inputName" value="1" [checked]="movie.rating===1" />
-                    <label title="Bad" (click)='onClick(1, movie.name)'>1 star</label>
+                    <input type="radio" value="1" [checked]="movie.rating===1" />
+                    <label title="Bad">1 star</label>
                 </fieldset>
                 
                 <h4><a class="categoryMovieTitle" routerLink="/movie/{{movie.slug}}">
@@ -77,24 +77,24 @@
                         <a routerLink="/movie/{{movie.slug}}">{{movie.name}}</a>
                     </td>
                     <td>{{movie.category}}</td>
-                    <td>
+                    <td class="ratingCategoryAll">
                         <fieldset class="ratingCategory">
-                            <input type="radio" [name]="inputName" value="5" [checked]="movie.rating===5" />
-                            <label title="Love it!" (click)='onClick(5, movie.name)'>5 stars</label>
+                            <input type="radio" value="5" [checked]="movie.rating===5" />
+                            <label title="Love it!">5 stars</label>
 
-                            <input type="radio" [name]="inputName" value="4" [checked]="movie.rating===4" />
-                            <label title="Good" (click)='onClick(4, movie.name)'>4 stars</label>
+                            <input type="radio" value="4" [checked]="movie.rating===4" />
+                            <label title="Good">4 stars</label>
 
-                            <input type="radio" [name]="inputName" value="3" [checked]="movie.rating===3" />
-                            <label title="Alright" (click)='onClick(3, movie.name)'>3 stars</label>
+                            <input type="radio" value="3" [checked]="movie.rating===3" />
+                            <label title="Alright">3 stars</label>
 
-                            <input type="radio" [name]="inputName" value="2" [checked]="movie.rating===2" />
-                            <label title="Meh" (click)='onClick(2, movie.name)'>2 stars</label>
+                            <input type="radio" value="2" [checked]="movie.rating===2" />
+                            <label title="Meh">2 stars</label>
 
-                            <input type="radio" [name]="inputName" value="1" [checked]="movie.rating===1" />
-                            <label title="Bad" (click)='onClick(1, movie.name)'>1 star</label>
+                            <input type="radio" value="1" [checked]="movie.rating===1" />
+                            <label title="Bad">1 star</label>
                         </fieldset>
-                    <td>
+                    </td>
                     <td>
                         <button (click)="deleteMovie(movie)" class="delMovieBtn btn btn-danger btn-sm" type="button">X</button>
                     </td>

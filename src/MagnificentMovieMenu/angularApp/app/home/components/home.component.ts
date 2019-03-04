@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
     this.nextNum = 0;
   }
 
+  ngAfterViewInit() {
+    this.searchMovies();
+  }
+
   private searchMovies() {
     this.imdbService
       .getMovies()
